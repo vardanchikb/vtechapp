@@ -354,8 +354,8 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	.badge {
 		display: inline-flex;
 		width: fit-content;
-		margin-bottom: 1rem;
-		padding: 0.42rem 0.68rem;
+		margin-bottom: 0.85rem;
+		padding: 0.36rem 0.62rem;
 		border: 1px solid rgba(57, 215, 176, 0.22);
 		border-radius: 999px;
 		background: rgba(57, 215, 176, 0.08);
@@ -379,12 +379,18 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	}
 
 	.home-hero {
-		grid-template-columns: minmax(0, 0.94fr) minmax(300px, 0.86fr);
-		min-height: auto;
-		padding: clamp(1.5rem, 4vw, 3.2rem);
+		position: relative;
+		display: block;
+		min-height: clamp(360px, 38vw, 500px);
+		padding: clamp(1.45rem, 4vw, 3rem);
 		background:
-			linear-gradient(90deg, rgba(4, 13, 17, 0.96), rgba(4, 13, 17, 0.84) 45%, rgba(4, 13, 17, 0.58)),
-			linear-gradient(180deg, rgba(4, 13, 17, 0.12), rgba(4, 13, 17, 0.58));
+			linear-gradient(90deg, rgba(4, 13, 17, 0.96) 0%, rgba(4, 13, 17, 0.9) 34%, rgba(4, 13, 17, 0.58) 62%, rgba(4, 13, 17, 0.22) 100%),
+			linear-gradient(180deg, rgba(4, 13, 17, 0.2), rgba(4, 13, 17, 0.56)),
+			url("/images/hero-system-utilities.webp"),
+			radial-gradient(circle at 75% 24%, rgba(57, 215, 176, 0.18), transparent 18rem),
+			linear-gradient(135deg, #0f222c, #071117);
+		background-position: center right;
+		background-size: cover;
 		overflow: hidden;
 	}
 
@@ -394,9 +400,14 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		max-width: 610px;
 	}
 
+	.home-hero .hero-copy {
+		max-width: min(670px, 58%);
+	}
+
 	.hero h1 {
-		margin-bottom: 0.9rem;
-		font-size: clamp(2.25rem, 4.3vw, 4rem);
+		margin-bottom: 0.82rem;
+		font-size: clamp(2.05rem, 3.45vw, 3.35rem);
+		line-height: 1.04;
 	}
 
 	.hero p {
@@ -404,47 +415,8 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		font-size: clamp(0.98rem, 1.1vw, 1.06rem);
 	}
 
-	.hero-media {
-		min-height: clamp(260px, 31vw, 390px);
-		border: 1px solid var(--border-strong);
-		border-radius: calc(var(--radius-lg) - 4px);
-		background:
-			linear-gradient(90deg, rgba(5, 13, 18, 0.2), rgba(5, 13, 18, 0.52)),
-			url("/images/hero-system-utilities.webp"),
-			radial-gradient(circle at 70% 28%, rgba(57, 215, 176, 0.18), transparent 16rem),
-			linear-gradient(135deg, #0f222c, #071117);
-		background-position: center;
-		background-size: cover;
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-		overflow: hidden;
-	}
-
-	.hero-media-panel {
-		display: grid;
-		gap: 0.72rem;
-		width: min(78%, 360px);
-		margin: clamp(1rem, 4vw, 2.2rem) 0 0 auto;
-		padding: 1rem;
-		border: 1px solid rgba(148, 220, 238, 0.14);
-		border-right: 0;
-		border-radius: var(--radius-md) 0 0 var(--radius-md);
-		background: rgba(5, 13, 18, 0.56);
-		backdrop-filter: blur(12px);
-	}
-
-	.hero-media-panel span {
-		display: block;
-		height: 10px;
-		border-radius: 999px;
-		background: linear-gradient(90deg, rgba(57, 215, 176, 0.78), rgba(101, 205, 247, 0.18));
-	}
-
-	.hero-media-panel span:nth-child(2) {
-		width: 72%;
-	}
-
-	.hero-media-panel span:nth-child(3) {
-		width: 48%;
+	.home-hero .hero p {
+		max-width: 580px;
 	}
 
 	.hero-actions,
@@ -1040,6 +1012,21 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 			grid-template-columns: 1fr;
 		}
 
+		.home-hero {
+			min-height: auto;
+			background:
+				linear-gradient(90deg, rgba(4, 13, 17, 0.96), rgba(4, 13, 17, 0.82)),
+				linear-gradient(180deg, rgba(4, 13, 17, 0.14), rgba(4, 13, 17, 0.68)),
+				url("/images/hero-system-utilities.webp"),
+				linear-gradient(135deg, #0f222c, #071117);
+			background-position: center right;
+			background-size: cover;
+		}
+
+		.home-hero .hero-copy {
+			max-width: 640px;
+		}
+
 		.feature-strip {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
@@ -1082,11 +1069,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		}
 
 		.hero h1 {
-			font-size: clamp(2rem, 12vw, 2.8rem);
-		}
-
-		.hero-media {
-			min-height: 220px;
+			font-size: clamp(1.95rem, 10vw, 2.65rem);
 		}
 
 		.feature-strip {
