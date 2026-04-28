@@ -17,7 +17,7 @@ const hasSource = Boolean(app.sourceUrl);
 	title={`${app.name} | VTech App`}
 	description={app.shortDescription}
 >
-	<article>
+	<article class="detail-shell">
 		<header class="hero">
 			<div>
 				<p class="eyebrow">{app.platform} app</p>
@@ -31,9 +31,12 @@ const hasSource = Boolean(app.sourceUrl);
 			</div>
 			<aside class="hero-panel">
 				<img src={app.icon} alt="" width="72" height="72" />
-				<p><strong>Platform:</strong> {app.platform}</p>
-				<p><strong>Current version:</strong> {app.currentVersion}</p>
-				<p><strong>Release date:</strong> {app.releaseDate}</p>
+				<div class="meta-grid">
+					<div class="meta-item"><span>Platform</span><strong>{app.platform}</strong></div>
+					<div class="meta-item"><span>Status</span><strong>{app.status}</strong></div>
+					<div class="meta-item"><span>Version</span><strong>{app.currentVersion}</strong></div>
+					<div class="meta-item"><span>Release</span><strong>{app.releaseDate}</strong></div>
+				</div>
 				<span class="button disabled" aria-disabled="true">Download Coming Soon</span>
 			</aside>
 		</header>

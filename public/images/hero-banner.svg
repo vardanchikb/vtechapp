@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">VTech App technical hero banner</title>
+  <desc id="desc">Abstract dark technical interface showing storage analysis, permission auditing, and clean data flow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1080" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102833"/>
+      <stop offset=".55" stop-color="#071014"/>
+      <stop offset="1" stop-color="#0f302a"/>
+    </linearGradient>
+    <linearGradient id="line" x1="250" y1="160" x2="960" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39d7b0"/>
+      <stop offset=".55" stop-color="#66cfff"/>
+      <stop offset="1" stop-color="#f3c978"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.224 0 0 0 0 0.843 0 0 0 0 0.690 0 0 0 .45 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="820" rx="36" fill="url(#bg)"/>
+  <path d="M78 172h1044M78 302h1044M78 432h1044M78 562h1044M78 692h1044M202 72v676M406 72v676M610 72v676M814 72v676M1018 72v676" stroke="#66cfff" stroke-opacity=".055" stroke-width="2"/>
+  <rect x="118" y="116" width="420" height="586" rx="30" fill="#08151b" stroke="#66cfff" stroke-opacity=".22"/>
+  <rect x="662" y="118" width="420" height="184" rx="28" fill="#0c1f28" stroke="#66cfff" stroke-opacity=".22"/>
+  <rect x="662" y="342" width="420" height="360" rx="28" fill="#0c1f28" stroke="#66cfff" stroke-opacity=".22"/>
+  <path d="M174 184h160M174 229h284M174 274h238" stroke="#edf7fa" stroke-opacity=".72" stroke-width="18" stroke-linecap="round"/>
+  <path d="M174 360h272M174 414h210M174 468h308M174 522h156M174 576h250" stroke="#66cfff" stroke-opacity=".42" stroke-width="18" stroke-linecap="round"/>
+  <path d="M174 632h110" stroke="#39d7b0" stroke-opacity=".86" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="720" cy="204" r="24" fill="#39d7b0" opacity=".92"/>
+  <circle cx="805" cy="204" r="24" fill="#66cfff" opacity=".9"/>
+  <circle cx="890" cy="204" r="24" fill="#f3c978" opacity=".9"/>
+  <path d="M945 182h82M945 226h54" stroke="#edf7fa" stroke-opacity=".68" stroke-width="16" stroke-linecap="round"/>
+  <path d="M540 406C614 324 690 300 768 334c80 35 128 17 178-52" fill="none" stroke="url(#line)" stroke-width="12" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M540 514c78 48 158 54 240 18s155-31 220 16" fill="none" stroke="url(#line)" stroke-width="10" stroke-linecap="round" opacity=".84"/>
+  <circle cx="540" cy="406" r="15" fill="#39d7b0"/>
+  <circle cx="768" cy="334" r="15" fill="#66cfff"/>
+  <circle cx="946" cy="282" r="15" fill="#f3c978"/>
+  <rect x="718" y="402" width="304" height="70" rx="18" fill="#071014" stroke="#66cfff" stroke-opacity=".18"/>
+  <rect x="718" y="504" width="304" height="70" rx="18" fill="#071014" stroke="#66cfff" stroke-opacity=".18"/>
+  <rect x="718" y="606" width="304" height="48" rx="16" fill="#071014" stroke="#39d7b0" stroke-opacity=".22"/>
+  <path d="M752 438h138M922 438h58M752 540h206M752 630h124" stroke="#edf7fa" stroke-opacity=".7" stroke-width="13" stroke-linecap="round"/>
+  <path d="M752 462h86M752 564h124M910 630h58" stroke="#39d7b0" stroke-opacity=".75" stroke-width="9" stroke-linecap="round"/>
+  <text x="118" y="770" fill="#a1b5bd" font-family="Segoe UI, sans-serif" font-size="28">Storage • Permissions • Auditing • Practical Utilities</text>
+</svg>

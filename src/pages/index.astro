@@ -1,20 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AppCard from '../components/AppCard.astro';
+import apps from '../data/apps.json';
+
+const windowsApps = apps.filter((app) => app.platform === 'Windows');
 ---
 
 <Layout
 	title="VTech App | Free Windows Utilities Coming Soon"
 	description="VTech App builds practical free software utilities for Windows users, technicians, and system administrators. Windows tools are in development and Linux tools are planned."
 >
-	<section class="hero visual-hero">
+	<section class="hero">
 		<div class="hero-copy">
 			<p class="eyebrow">Official vtech-app.com website</p>
-			<h1>Practical utilities built by experience and amplified by AI.</h1>
 			<p class="hero-motto">25 years of experience powered with AI capabilities.</p>
+			<h1>Practical free software utilities for Windows administration.</h1>
 			<p>
-				VTech App builds practical free software utilities for Windows users, technicians, and
-				system administrators. The first Windows tools are currently in development, with Linux
-				utilities planned for future releases.
+				VTech App builds focused tools for Windows users, technicians, and system administrators.
+				The first utilities target storage analysis, permission-preserving file copy, and file
+				server permission auditing.
 			</p>
 			<div class="hero-actions">
 				<a class="button primary" href="/apps/">Browse apps</a>
@@ -28,10 +32,10 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 		<figure class="hero-visual">
-			<img src="/brand/human-ai-banner.svg" alt="Human and AI interaction illustration for VTech App" width="1200" height="760" />
+			<img src="/images/hero-banner.svg" alt="Abstract technical interface for VTech App utilities" width="1200" height="820" />
 			<figcaption class="hero-visual-card">
-				<strong>Human judgment + AI capability</strong>
-				<span>Focused on useful tools for Windows users, technicians, and administrators.</span>
+				<strong>Built for real system work</strong>
+				<span>Storage, permissions, auditing, and practical administrative workflows.</span>
 			</figcaption>
 		</figure>
 	</section>
@@ -43,7 +47,7 @@ import Layout from '../layouts/Layout.astro';
 		<div class="feature-pill"><strong>Direct</strong><span>Support via vtechinf1@gmail.com</span></div>
 	</div>
 
-	<section class="grid" aria-label="Site highlights">
+	<section class="feature-grid" aria-label="Site highlights">
 		<article class="card">
 			<h2>Windows utilities</h2>
 			<p>
@@ -88,6 +92,23 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
+	<section>
+		<div class="section-heading">
+			<div>
+				<p class="eyebrow">Windows apps</p>
+				<h2>Utilities currently in development</h2>
+				<p>
+					Each app is marked Coming Soon until real release builds are available from official
+					VTech App links.
+				</p>
+			</div>
+			<a class="button" href="/apps/">View all apps</a>
+		</div>
+		<div class="grid">
+			{windowsApps.map((app) => <AppCard app={app} />)}
+		</div>
+	</section>
+
 	<section class="two-column">
 		<aside class="hero-panel terminal-window" aria-label="Project status">
 			<div class="terminal-bar"><span></span></div>
@@ -126,5 +147,20 @@ import Layout from '../layouts/Layout.astro';
 			</p>
 			<a class="button primary" href="/donate/">Donate</a>
 		</article>
+	</section>
+
+	<section class="final-cta">
+		<div>
+			<p class="eyebrow">Stay connected</p>
+			<h2>Help shape the first VTech App releases.</h2>
+			<p>
+				Send feedback, feature ideas, and practical Windows administration problems you want the
+				tools to solve.
+			</p>
+		</div>
+		<div class="actions">
+			<a class="button primary" href="/contact/">Send feedback</a>
+			<a class="button" href="/downloads/">Check downloads</a>
+		</div>
 	</section>
 </Layout>
