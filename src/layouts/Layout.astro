@@ -109,13 +109,13 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		--accent-2: #66cfff;
 		--warning: #f3c978;
 		--danger: #ff8b8b;
-		--container: 1220px;
+		--container: 1360px;
 		--radius-sm: 12px;
 		--radius-md: 18px;
 		--radius-lg: 26px;
 		--shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.24);
 		--shadow-card: 0 14px 34px rgba(0, 0, 0, 0.18);
-		--space-section: clamp(3.5rem, 7vw, 5.75rem);
+		--space-section: clamp(2.8rem, 5.5vw, 4.75rem);
 		font-family: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
 	}
 
@@ -136,8 +136,8 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 			radial-gradient(circle at 18% -10%, rgba(57, 215, 176, 0.16), transparent 28rem),
 			radial-gradient(circle at 88% 6%, rgba(102, 207, 255, 0.14), transparent 30rem),
 			linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 52%, #061014 100%);
-		font-size: 16px;
-		line-height: 1.65;
+		font-size: 15px;
+		line-height: 1.58;
 		text-rendering: optimizeLegibility;
 	}
 
@@ -187,15 +187,15 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	}
 
 	h1 {
-		font-size: clamp(2.45rem, 5vw, 4.8rem);
+		font-size: clamp(2.15rem, 4.2vw, 4.05rem);
 	}
 
 	h2 {
-		font-size: clamp(1.55rem, 2.6vw, 2.4rem);
+		font-size: clamp(1.38rem, 2.2vw, 2.05rem);
 	}
 
 	h3 {
-		font-size: clamp(1.12rem, 1.4vw, 1.35rem);
+		font-size: clamp(1.02rem, 1.25vw, 1.2rem);
 	}
 
 	p {
@@ -221,7 +221,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		align-items: center;
 		justify-content: space-between;
 		gap: 1.25rem;
-		min-height: 76px;
+		min-height: 68px;
 	}
 
 	.brand {
@@ -311,7 +311,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	}
 
 	main {
-		padding: clamp(1.5rem, 3vw, 2.4rem) 0 var(--space-section);
+		padding: clamp(1.15rem, 2.4vw, 1.9rem) 0 var(--space-section);
 	}
 
 	section {
@@ -359,8 +359,8 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 
 	.home-hero {
 		grid-template-columns: minmax(0, 0.72fr) minmax(240px, 0.28fr);
-		min-height: clamp(540px, 62vw, 720px);
-		padding: clamp(1.5rem, 5vw, 4.6rem);
+		min-height: clamp(455px, 48vw, 610px);
+		padding: clamp(1.35rem, 4vw, 3.65rem);
 		background:
 			linear-gradient(90deg, rgba(4, 13, 17, 0.95) 0%, rgba(4, 13, 17, 0.84) 35%, rgba(4, 13, 17, 0.38) 64%, rgba(4, 13, 17, 0.18) 100%),
 			linear-gradient(180deg, rgba(4, 13, 17, 0.2), rgba(4, 13, 17, 0.58)),
@@ -378,12 +378,12 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 
 	.hero h1 {
 		margin-bottom: 1rem;
-		font-size: clamp(2.35rem, 4.7vw, 4.35rem);
+		font-size: clamp(2.1rem, 3.9vw, 3.75rem);
 	}
 
 	.hero p {
 		max-width: 620px;
-		font-size: clamp(1rem, 1.25vw, 1.12rem);
+		font-size: clamp(0.95rem, 1.05vw, 1.03rem);
 	}
 
 	.hero-motto {
@@ -395,7 +395,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		border-radius: 999px;
 		background: rgba(57, 215, 176, 0.08);
 		color: #b9fff0;
-		font-size: 0.92rem;
+		font-size: 0.86rem;
 		font-weight: 800;
 	}
 
