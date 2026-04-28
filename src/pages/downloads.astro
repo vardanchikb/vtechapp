@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import apps from '../data/apps.json';
+
+const windowsApps = apps.filter((app) => app.platform === 'Windows');
+const linuxApps = apps.filter((app) => app.platform === 'Linux');
+---
+
+<Layout
+	title="Downloads | VTech App"
+	description="Official VTech App downloads. Windows apps are coming soon and download buttons are disabled until release."
+>
+	<header class="page-heading">
+		<p class="eyebrow">Official downloads</p>
+		<h1>Downloads</h1>
+		<p>
+			Downloads will be published here only when official release builds are available. Download
+			VTech App software only from official vtech-app.com links.
+		</p>
+	</header>
+
+	<section>
+		<div class="section-heading">
+			<div>
+				<h2>Windows Apps</h2>
+				<p>All Windows utilities are currently in development.</p>
+			</div>
+		</div>
+		<div class="stack">
+			{windowsApps.map((app) => (
+				<article class="download-row">
+					<div>
+						<span class="status">{app.status}</span>
+						<h3>{app.name}</h3>
+						<p>
+							Version: {app.currentVersion} | Platform: {app.platform} | Release date: {app.releaseDate}
+						</p>
+					</div>
+					<div class="actions">
+						<span class="button disabled" aria-disabled="true">Coming Soon</span>
+						<a class="button" href={`/apps/${app.slug}/`}>App details</a>
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section>
+		<div class="notice">
+			<h2>Linux Apps Coming Soon</h2>
+			<p>
+				Linux utilities are planned for future releases. No Linux downloads are available yet.
+			</p>
+		</div>
+	</section>
+</Layout>

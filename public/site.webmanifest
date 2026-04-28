@@ -1,0 +1,17 @@
+{
+  "name": "VTech App",
+  "short_name": "VTech App",
+  "description": "Practical free software utilities for Windows users, technicians, and system administrators.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071014",
+  "theme_color": "#071014",
+  "icons": [
+    {
+      "src": "/icons/placeholder-app.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

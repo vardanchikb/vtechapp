@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">VTech App placeholder screenshot two</title>
+  <rect width="960" height="540" fill="#071014"/>
+  <circle cx="770" cy="120" r="180" fill="#37d7a1" opacity=".12"/>
+  <circle cx="190" cy="420" r="190" fill="#75d6ff" opacity=".1"/>
+  <rect x="56" y="56" width="848" height="428" rx="30" fill="#0c181e" stroke="#37d7a1" stroke-opacity=".25"/>
+  <rect x="96" y="108" width="768" height="74" rx="18" fill="#12242c"/>
+  <rect x="96" y="214" width="230" height="190" rx="20" fill="#12242c"/>
+  <rect x="365" y="214" width="230" height="190" rx="20" fill="#12242c"/>
+  <rect x="634" y="214" width="230" height="190" rx="20" fill="#12242c"/>
+  <path d="M128 145h260M128 276h150M397 276h150M666 276h150" stroke="#edf8fb" stroke-opacity=".72" stroke-width="16" stroke-linecap="round"/>
+  <path d="M128 332h100M397 332h120M666 332h90" stroke="#37d7a1" stroke-opacity=".75" stroke-width="14" stroke-linecap="round"/>
+  <text x="96" y="452" fill="#9fb7bf" font-family="Segoe UI, sans-serif" font-size="22">Interface preview placeholder</text>
+</svg>

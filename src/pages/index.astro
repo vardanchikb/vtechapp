@@ -1,11 +1,71 @@
----
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="VTech App | Free Windows Utilities Coming Soon"
+	description="VTech App builds practical free software utilities for Windows users, technicians, and system administrators. Windows tools are in development and Linux tools are planned."
+>
+	<section class="hero">
+		<div>
+			<p class="eyebrow">Official vtech-app.com website</p>
+			<h1>Welcome to VTech App.</h1>
+			<p>
+				VTech App builds practical free software utilities for Windows users, technicians, and
+				system administrators. The first Windows tools are currently in development, with Linux
+				utilities planned for future releases.
+			</p>
+			<div class="hero-actions">
+				<a class="button primary" href="/apps/">Browse apps</a>
+				<a class="button" href="/contact/">Send feedback</a>
+			</div>
+		</div>
+		<aside class="hero-panel" aria-label="Project status">
+			<span class="status">All apps coming soon</span>
+			<h2>Static, fast, and focused on official releases.</h2>
+			<p>Downloads will appear only when real production builds are ready.</p>
+		</aside>
+	</section>
+
+	<section class="grid" aria-label="Site highlights">
+		<article class="card">
+			<h2>Windows utilities</h2>
+			<p>
+				The first catalog focuses on storage analysis, permission-preserving file copy, and file
+				server permission auditing for real-world Windows administration.
+			</p>
+		</article>
+		<article class="card">
+			<h2>Downloads coming soon</h2>
+			<p>
+				Download buttons remain disabled until official builds are ready. No fake installers or
+				placeholder packages are published.
+			</p>
+		</article>
+		<article class="card">
+			<h2>Feedback and suggestions</h2>
+			<p>
+				Use the contact form to request features, report issues, or suggest practical utilities
+				that would help your workflow.
+			</p>
+		</article>
+	</section>
+
+	<section class="two-column">
+		<article class="notice">
+			<p class="eyebrow">Future platform</p>
+			<h2>Linux utilities are planned.</h2>
+			<p>
+				The Linux catalog will stay empty until real utilities are ready to announce and release.
+			</p>
+		</article>
+		<article class="notice">
+			<p class="eyebrow">Support</p>
+			<h2>Support independent free software.</h2>
+			<p>
+				Donations help cover development time, testing, hosting, and future releases while
+				keeping VTech App tools free.
+			</p>
+			<a class="button primary" href="/donate/">Donate</a>
+		</article>
+	</section>
 </Layout>

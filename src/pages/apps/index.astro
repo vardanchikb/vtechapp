@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PlatformSection from '../../components/PlatformSection.astro';
+import apps from '../../data/apps.json';
+
+const windowsApps = apps.filter((app) => app.platform === 'Windows');
+const linuxApps = apps.filter((app) => app.platform === 'Linux');
+---
+
+<Layout
+	title="Apps | VTech App"
+	description="Browse VTech App software utilities by platform. Windows utilities are coming soon and Linux utilities are planned."
+>
+	<header class="page-heading">
+		<p class="eyebrow">Software catalog</p>
+		<h1>Apps</h1>
+		<p>
+			VTech App is building a focused catalog of practical utilities. Every listed Windows app is
+			currently marked Coming Soon until official downloads are ready.
+		</p>
+	</header>
+
+	<PlatformSection
+		title="Windows Apps"
+		description="Practical utilities for Windows users, technicians, and system administrators."
+		apps={windowsApps}
+	/>
+
+	<PlatformSection
+		title="Linux Apps"
+		description="Linux utilities are planned for future releases."
+		apps={linuxApps}
+	/>
+</Layout>

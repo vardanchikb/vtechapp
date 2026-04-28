@@ -1,0 +1,27 @@
+---
+interface App {
+	name: string;
+	slug: string;
+	platform: string;
+	status: string;
+	shortDescription: string;
+	icon: string;
+	tags: string[];
+}
+
+const { app } = Astro.props as { app: App };
+---
+
+<article class="app-card">
+	<img src={app.icon} alt="" width="56" height="56" loading="lazy" />
+	<div>
+		<span class="status">{app.status}</span>
+		<h3>{app.name}</h3>
+		<p>{app.shortDescription}</p>
+	</div>
+	<p class="meta">{app.platform} utility</p>
+	<ul class="tags" aria-label={`${app.name} tags`}>
+		{app.tags.slice(0, 4).map((tag) => <li class="tag">{tag}</li>)}
+	</ul>
+	<a class="button" href={`/apps/${app.slug}/`}>View details</a>
+</article>

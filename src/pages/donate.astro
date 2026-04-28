@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const donationUrl = 'https://www.buymeacoffee.com/vtechapp';
+---
+
+<Layout
+	title="Donate | VTech App"
+	description="Support VTech App development with a donation. VTech App software is free and independent."
+>
+	<header class="page-heading">
+		<p class="eyebrow">Support development</p>
+		<h1>Donate</h1>
+		<p>
+			VTech App software is free. If the tools are useful to you, donations help support
+			development time, testing, hosting, and future releases.
+		</p>
+		<a class="button primary" href={donationUrl} rel="noopener noreferrer">Support on Buy Me a Coffee</a>
+	</header>
+
+	<section class="grid">
+		<article class="card">
+			<h2>Development time</h2>
+			<p>Donations help fund design, coding, documentation, and long-term maintenance.</p>
+		</article>
+		<article class="card">
+			<h2>Testing</h2>
+			<p>Practical utilities need careful testing across real Windows administration scenarios.</p>
+		</article>
+		<article class="card">
+			<h2>Hosting and releases</h2>
+			<p>Support helps cover the website, release hosting, and future app distribution work.</p>
+		</article>
+	</section>
+
+	<section class="notice">
+		<h2>No payment processing on this site</h2>
+		<p>
+			VTech App links to a placeholder third-party donation provider. No payment processing code is
+			embedded directly into this static website.
+		</p>
+	</section>
+</Layout>

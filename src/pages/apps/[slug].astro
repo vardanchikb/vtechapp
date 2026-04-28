@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import apps from '../../data/apps.json';
+
+export function getStaticPaths() {
+	return apps.map((app) => ({
+		params: { slug: app.slug },
+		props: { app },
+	}));
+}
+
+const { app } = Astro.props;
+const hasSource = Boolean(app.sourceUrl);
+---
+
+<Layout
+	title={`${app.name} | VTech App`}
+	description={app.shortDescription}
+>
+	<article>
+		<header class="hero">
+			<div>
+				<p class="eyebrow">{app.platform} app</p>
+				<h1>{app.name}</h1>
+				<p>{app.shortDescription}</p>
+				<div class="hero-actions">
+					<span class="status">{app.status}</span>
+					<a class="button primary" href={app.donationUrl} rel="noopener noreferrer">Donate</a>
+					<a class="button" href={`mailto:${app.supportEmail}`}>Contact support</a>
+				</div>
+			</div>
+			<aside class="hero-panel">
+				<img src={app.icon} alt="" width="72" height="72" />
+				<p><strong>Platform:</strong> {app.platform}</p>
+				<p><strong>Current version:</strong> {app.currentVersion}</p>
+				<p><strong>Release date:</strong> {app.releaseDate}</p>
+				<span class="button disabled" aria-disabled="true">Download Coming Soon</span>
+			</aside>
+		</header>
+
+		<section class="two-column">
+			<div class="card">
+				<h2>About this app</h2>
+				<p>{app.longDescription}</p>
+				<ul class="tags" aria-label={`${app.name} tags`}>
+					{app.tags.map((tag) => <li class="tag">{tag}</li>)}
+				</ul>
+			</div>
+			<div class="card">
+				<h2>Release status</h2>
+				<p>
+					This app is in development. The download button will remain disabled until an official
+					build is available from VTech App.
+				</p>
+			</div>
+		</section>
+
+		<section>
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">Preview</p>
+					<h2>Screenshot gallery</h2>
+					<p>Placeholder screenshots are shown until production screenshots are available.</p>
+				</div>
+			</div>
+			<div class="gallery">
+				{app.screenshots.map((screenshot) => <img src={screenshot} alt={`${app.name} placeholder screenshot`} loading="lazy" />)}
+			</div>
+		</section>
+
+		<section class="two-column">
+			<div class="card">
+				<h2>Changelog</h2>
+				<ul>
+					{app.changelog.map((entry) => <li>{entry}</li>)}
+				</ul>
+			</div>
+			<div class="card">
+				<h2>Source URL</h2>
+				{
+					hasSource ? (
+						<a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a>
+					) : (
+						<p class="meta">No public source URL is available yet.</p>
+					)
+				}
+			</div>
+		</section>
+	</article>
+</Layout>

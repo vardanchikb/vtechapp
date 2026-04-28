@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import apps from '../data/apps.json';
+---
+
+<Layout
+	title="Contact and Feedback | VTech App"
+	description="Send feedback, feature requests, bug reports, support questions, or donation questions to VTech App."
+>
+	<header class="page-heading">
+		<p class="eyebrow">Contact</p>
+		<h1>Feedback and support</h1>
+		<p>
+			Use this static-friendly form for feedback, feature requests, bug reports, and support
+			questions. Replace the placeholder Formspree endpoint before production use.
+		</p>
+	</header>
+
+	<section class="two-column">
+		<form class="form-card" action="https://formspree.io/f/placeholder" method="POST">
+			<label>
+				Name
+				<input name="name" autocomplete="name" required />
+			</label>
+			<label>
+				Email
+				<input type="email" name="email" autocomplete="email" required />
+			</label>
+			<label>
+				App name
+				<select name="app-name">
+					<option value="">General / not app-specific</option>
+					{apps.map((app) => <option value={app.name}>{app.name}</option>)}
+				</select>
+			</label>
+			<label>
+				Feedback type
+				<select name="feedback-type" required>
+					<option>General feedback</option>
+					<option>Feature request</option>
+					<option>Bug report</option>
+					<option>Support question</option>
+					<option>Donation/support question</option>
+				</select>
+			</label>
+			<label>
+				Message
+				<textarea name="message" required></textarea>
+			</label>
+			<button class="button primary" type="submit">Send feedback</button>
+		</form>
+
+		<aside class="notice">
+			<h2>Privacy note</h2>
+			<p>This site does not create user accounts.</p>
+			<p>
+				Contact form submissions are used only to respond to feedback or support requests.
+			</p>
+			<p>
+				Do not send passwords, license keys, private tokens, or sensitive data through the form.
+			</p>
+		</aside>
+	</section>
+</Layout>

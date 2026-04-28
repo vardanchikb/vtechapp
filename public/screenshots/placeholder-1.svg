@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">VTech App placeholder screenshot one</title>
+  <rect width="960" height="540" fill="#071014"/>
+  <rect x="40" y="40" width="880" height="460" rx="28" fill="#0c181e" stroke="#75d6ff" stroke-opacity=".22"/>
+  <rect x="76" y="82" width="250" height="36" rx="10" fill="#37d7a1" opacity=".82"/>
+  <rect x="76" y="150" width="190" height="300" rx="18" fill="#12242c"/>
+  <rect x="300" y="150" width="584" height="300" rx="18" fill="#0a151b" stroke="#75d6ff" stroke-opacity=".16"/>
+  <path d="M335 400h500" stroke="#75d6ff" stroke-opacity=".28" stroke-width="18" stroke-linecap="round"/>
+  <path d="M335 340h360" stroke="#37d7a1" stroke-opacity=".55" stroke-width="18" stroke-linecap="round"/>
+  <path d="M335 280h440" stroke="#75d6ff" stroke-opacity=".42" stroke-width="18" stroke-linecap="round"/>
+  <path d="M335 220h260" stroke="#f7c873" stroke-opacity=".7" stroke-width="18" stroke-linecap="round"/>
+  <text x="76" y="476" fill="#9fb7bf" font-family="Segoe UI, sans-serif" font-size="22">Production screenshots coming soon</text>
+</svg>

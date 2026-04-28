@@ -1,0 +1,41 @@
+---
+import AppCard from './AppCard.astro';
+
+interface App {
+	name: string;
+	slug: string;
+	platform: string;
+	status: string;
+	shortDescription: string;
+	icon: string;
+	tags: string[];
+}
+
+const { title, description, apps = [] } = Astro.props as {
+	title: string;
+	description: string;
+	apps?: App[];
+};
+---
+
+<section>
+	<div class="section-heading">
+		<div>
+			<p class="eyebrow">Platform</p>
+			<h2>{title}</h2>
+			<p>{description}</p>
+		</div>
+	</div>
+	{
+		apps.length > 0 ? (
+			<div class="grid">
+				{apps.map((app) => <AppCard app={app} />)}
+			</div>
+		) : (
+			<div class="notice">
+				<h2>Linux Apps Coming Soon</h2>
+				<p>Linux utilities are planned for future releases. No Linux downloads are available yet.</p>
+			</div>
+		)
+	}
+</section>
