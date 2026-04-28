@@ -7,80 +7,27 @@ const windowsApps = apps.filter((app) => app.platform === 'Windows');
 ---
 
 <Layout
-	title="VTech App | Free Windows Utilities Coming Soon"
-	description="VTech App builds practical free software utilities for Windows users, technicians, and system administrators. Windows tools are in development and Linux tools are planned."
+	title="VTech App | Practical Windows Utilities"
+	description="VTech App builds focused tools for storage analysis, permission-safe file operations, and file-server auditing."
 >
 	<section class="hero home-hero">
 		<div class="hero-copy">
-			<p class="eyebrow">Official vtech-app.com website</p>
-			<p class="hero-motto">25 years of experience powered with AI capabilities.</p>
-			<h1>Practical free software utilities for Windows administration.</h1>
+			<p class="badge">Independent free software for practical system work</p>
+			<h1>Practical Windows utilities for real-world system work.</h1>
 			<p>
-				VTech App builds focused tools for Windows users, technicians, and system administrators.
-				New utilities will continue to be added as practical workflows are built, tested, and
-				ready to release.
+				VTech App builds focused tools for storage analysis, permission-safe file operations,
+				and file-server auditing.
 			</p>
 			<div class="hero-actions">
 				<a class="button primary" href="/apps/">Browse apps</a>
 				<a class="button" href="/contact/">Send feedback</a>
 			</div>
-			<div class="category-chips" aria-label="Catalog categories">
-				<a href="/apps/">Storage analysis</a>
-				<a href="/apps/">Permission tools</a>
-				<a href="/apps/">File server auditing</a>
-				<span>Linux planned</span>
-			</div>
 		</div>
-	</section>
-
-	<div class="feature-strip" aria-label="VTech App principles">
-		<div class="feature-pill"><strong>Free</strong><span>No paid-service dependency</span></div>
-		<div class="feature-pill"><strong>Static</strong><span>Fast Cloudflare Pages site</span></div>
-		<div class="feature-pill"><strong>Useful</strong><span>Tools for real admin work</span></div>
-		<div class="feature-pill"><strong>Direct</strong><span>Support via vtechinf1@gmail.com</span></div>
-	</div>
-
-	<section class="feature-grid" aria-label="Site highlights">
-		<article class="card">
-			<h2>Windows utilities</h2>
-			<p>
-				The catalog focuses on practical Windows administration workflows and will continue to
-				grow as new utilities are ready.
-			</p>
-		</article>
-		<article class="card">
-			<h2>Downloads coming soon</h2>
-			<p>
-				Download buttons remain disabled until official builds are ready. No fake installers or
-				placeholder packages are published.
-			</p>
-		</article>
-		<article class="card">
-			<h2>Feedback and suggestions</h2>
-			<p>
-				Use the contact form to request features, report issues, or suggest practical utilities
-				that would help your workflow. You can also email vtechinf1@gmail.com directly.
-			</p>
-		</article>
-	</section>
-
-	<section class="catalog-panel">
-		<div class="card catalog-stat">
-			<div>
-				<strong>3</strong>
-				<span>Windows utilities in development</span>
-			</div>
-		</div>
-		<div class="card">
-			<p class="eyebrow">Catalog status</p>
-			<h2>Official downloads will appear only when releases are ready.</h2>
-			<p>
-				VTech App is currently a launch catalog and support hub. Each app has a detail page,
-				release metadata, tags, screenshots, and a clear Coming Soon download state.
-			</p>
-			<div class="actions">
-				<a class="button" href="/downloads/">View downloads</a>
-				<a class="button" href="/apps/">View app catalog</a>
+		<div class="hero-media" aria-hidden="true">
+			<div class="hero-media-panel">
+				<span></span>
+				<span></span>
+				<span></span>
 			</div>
 		</div>
 	</section>
@@ -88,12 +35,8 @@ const windowsApps = apps.filter((app) => app.platform === 'Windows');
 	<section>
 		<div class="section-heading">
 			<div>
-				<p class="eyebrow">Windows apps</p>
-				<h2>Utilities currently in development</h2>
-				<p>
-					Each app is marked Coming Soon until real release builds are available from official
-					VTech App links.
-				</p>
+				<p class="eyebrow">Featured Windows Utilities</p>
+				<h2>Focused tools for common administration work.</h2>
 			</div>
 			<a class="button" href="/apps/">View all apps</a>
 		</div>
@@ -102,58 +45,55 @@ const windowsApps = apps.filter((app) => app.platform === 'Windows');
 		</div>
 	</section>
 
-	<section class="two-column">
-		<aside class="hero-panel terminal-window" aria-label="Project status">
-			<div class="terminal-bar"><span></span></div>
-			<p class="terminal-line"><strong>vtech-app.com</strong> status</p>
-			<p class="terminal-line">&gt; catalog: windows utilities</p>
-			<p class="terminal-line">&gt; downloads: coming soon</p>
-			<p class="terminal-line">&gt; linux tools: planned</p>
-			<p class="terminal-line">&gt; accounts: none</p>
-			<p class="terminal-line">&gt; backend: static only</p>
-		</aside>
-		<article class="notice">
-			<p class="eyebrow">Contact</p>
-			<h2>Questions, suggestions, and support.</h2>
-			<p>
-				Reach VTech App directly at <a href="mailto:vtechinf1@gmail.com">vtechinf1@gmail.com</a>.
-				Use your own email client or the contact form on the Contact page.
-			</p>
-			<a class="button" href="/contact/">Contact VTech App</a>
-		</article>
+	<section>
+		<div class="section-heading">
+			<div>
+				<p class="eyebrow">Why VTech App</p>
+				<h2>Small utilities, clear purpose.</h2>
+			</div>
+		</div>
+		<div class="feature-strip">
+			<div class="feature-pill"><strong>No accounts</strong><span>No login, user database, or hosted account dependency.</span></div>
+			<div class="feature-pill"><strong>Free software</strong><span>Independent utilities intended to stay accessible.</span></div>
+			<div class="feature-pill"><strong>Admin workflows</strong><span>Built around practical filesystem and permission tasks.</span></div>
+			<div class="feature-pill"><strong>Direct feedback</strong><span>Suggestions and support go straight to VTech App.</span></div>
+		</div>
 	</section>
 
-	<section class="two-column">
-		<article class="notice">
-			<p class="eyebrow">Future platform</p>
-			<h2>Linux utilities are planned.</h2>
+	<section class="roadmap-grid">
+		<article class="card roadmap-card">
+			<p class="eyebrow">Windows</p>
+			<h2>Windows utilities in development</h2>
 			<p>
-				The Linux catalog will stay empty until real utilities are ready to announce and release.
+				The current catalog focuses on Windows tools for storage visibility, safer file
+				operations, and file-server administration.
 			</p>
+			<a class="button" href="/apps/">Browse Windows apps</a>
 		</article>
-		<article class="notice">
-			<p class="eyebrow">Support</p>
-			<h2>Support independent free software.</h2>
+		<article class="card roadmap-card">
+			<p class="eyebrow">Linux</p>
+			<h2>Linux utilities planned</h2>
 			<p>
-				Donations help cover development time, testing, hosting, and future releases while
-				keeping VTech App tools free.
+				Linux tools are on the roadmap and will be listed only when real projects are ready to
+				announce.
 			</p>
-			<a class="button primary" href="/donate/">Donate</a>
+			<span class="status">Coming Soon</span>
 		</article>
 	</section>
 
 	<section class="final-cta">
 		<div>
-			<p class="eyebrow">Stay connected</p>
-			<h2>Help shape future VTech App releases.</h2>
+			<p class="eyebrow">Stay Connected</p>
+			<h2>Help shape useful system utilities.</h2>
 			<p>
-				Send feedback, feature ideas, and practical Windows administration problems you want the
+				Send feature ideas, bug reports, and real administration problems you want VTech App
 				tools to solve.
 			</p>
 		</div>
 		<div class="actions">
-			<a class="button primary" href="/contact/">Send feedback</a>
-			<a class="button" href="/downloads/">Check downloads</a>
+			<a class="button primary" href="/apps/">Browse apps</a>
+			<a class="button" href="/contact/">Contact</a>
+			<a class="button" href="/donate/">Donate</a>
 		</div>
 	</section>
 </Layout>

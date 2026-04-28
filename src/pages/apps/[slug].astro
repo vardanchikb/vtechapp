@@ -11,6 +11,7 @@ export function getStaticPaths() {
 
 const { app } = Astro.props;
 const hasSource = Boolean(app.sourceUrl);
+const iconClass = `app-mark ${app.slug}`;
 ---
 
 <Layout
@@ -30,7 +31,7 @@ const hasSource = Boolean(app.sourceUrl);
 				</div>
 			</div>
 			<aside class="hero-panel">
-				<img src={app.icon} alt="" width="72" height="72" />
+				<div class={iconClass} aria-hidden="true"><span></span></div>
 				<div class="meta-grid">
 					<div class="meta-item"><span>Platform</span><strong>{app.platform}</strong></div>
 					<div class="meta-item"><span>Status</span><strong>{app.status}</strong></div>
@@ -62,12 +63,21 @@ const hasSource = Boolean(app.sourceUrl);
 			<div class="section-heading">
 				<div>
 					<p class="eyebrow">Preview</p>
-					<h2>Screenshot gallery</h2>
-					<p>Placeholder screenshots are shown until production screenshots are available.</p>
+					<h2>Workflow preview</h2>
+					<p>Abstract interface previews show the type of workflow this utility is designed for.</p>
 				</div>
 			</div>
-			<div class="gallery">
-				{app.screenshots.map((screenshot) => <img src={screenshot} alt={`${app.name} placeholder screenshot`} loading="lazy" />)}
+			<div class="gallery preview-gallery">
+				<article class="preview-card">
+					<div class="preview-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+					<h3>Analyze</h3>
+					<p>Review the relevant file, folder, storage, or permission data clearly.</p>
+				</article>
+				<article class="preview-card">
+					<div class="preview-nodes" aria-hidden="true"><span></span><span></span><span></span></div>
+					<h3>Act</h3>
+					<p>Use focused utility workflows for practical administration tasks.</p>
+				</article>
 			</div>
 		</section>
 

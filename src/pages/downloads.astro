@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import apps from '../data/apps.json';
 
 const windowsApps = apps.filter((app) => app.platform === 'Windows');
-const linuxApps = apps.filter((app) => app.platform === 'Linux');
 ---
 
 <Layout
@@ -11,46 +10,57 @@ const linuxApps = apps.filter((app) => app.platform === 'Linux');
 	description="Official VTech App downloads. Windows apps are coming soon and download buttons are disabled until release."
 >
 	<header class="page-heading">
-		<p class="eyebrow">Official downloads</p>
-		<h1>Downloads</h1>
+		<p class="eyebrow">Release center</p>
+		<h1>Official downloads will appear here when ready.</h1>
 		<p>
-			Downloads will be published here only when official release builds are available. Download
-			VTech App software only from official vtech-app.com links.
+			VTech App releases will be published only through official vtech-app.com links. Current
+			utilities are still in development, so no active download buttons are shown.
 		</p>
 	</header>
 
 	<section>
 		<div class="section-heading">
 			<div>
-				<h2>Windows Apps</h2>
-				<p>All Windows utilities are currently in development.</p>
+				<h2>Windows utilities</h2>
+				<p>Release status for the current Windows utility catalog.</p>
 			</div>
 		</div>
-		<div class="stack">
+		<div class="release-table" aria-label="Windows app release status">
+			<div class="release-table-head">
+				<span>App</span>
+				<span>Platform</span>
+				<span>Version</span>
+				<span>Status</span>
+				<span>Action</span>
+			</div>
 			{windowsApps.map((app) => (
-				<article class="download-row">
+				<article class="release-row">
 					<div>
-						<span class="status">{app.status}</span>
 						<h3>{app.name}</h3>
-						<p>
-							Version: {app.currentVersion} | Platform: {app.platform} | Release date: {app.releaseDate}
-						</p>
+						<p>{app.shortDescription}</p>
 					</div>
-					<div class="actions">
-						<span class="button disabled" aria-disabled="true">Coming Soon</span>
-						<a class="button" href={`/apps/${app.slug}/`}>App details</a>
-					</div>
+					<span>{app.platform}</span>
+					<span>{app.currentVersion}</span>
+					<span class="status">{app.status}</span>
+					<a class="button" href={`/apps/${app.slug}/`}>Details</a>
 				</article>
 			))}
 		</div>
 	</section>
 
-	<section>
-		<div class="notice">
+	<section class="two-column">
+		<article class="notice">
 			<h2>Linux Apps Coming Soon</h2>
 			<p>
 				Linux utilities are planned for future releases. No Linux downloads are available yet.
 			</p>
-		</div>
+		</article>
+		<article class="notice">
+			<h2>Download safety</h2>
+			<p>
+				Future releases will include official links, version numbers, changelogs, and checksums
+				so users can verify what they are installing.
+			</p>
+		</article>
 	</section>
 </Layout>

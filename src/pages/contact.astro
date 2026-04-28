@@ -11,16 +11,19 @@ const contactEmail = 'vtechinf1@gmail.com';
 >
 	<header class="page-heading">
 		<p class="eyebrow">Contact</p>
-		<h1>Feedback and support</h1>
+		<h1>Feedback and support.</h1>
 		<p>
-			Use this static-friendly form for feedback, feature requests, bug reports, and support
-			questions, or email VTech App directly at {contactEmail}.
+			Send practical feedback, feature requests, bug reports, and support questions directly to
+			VTech App.
 		</p>
-		<a class="button primary" href={`mailto:${contactEmail}`}>Email {contactEmail}</a>
 	</header>
 
-	<section class="two-column">
+	<section class="contact-grid">
 		<form class="form-card" action={`mailto:${contactEmail}?subject=VTech%20App%20Feedback`} method="POST" enctype="text/plain">
+			<div>
+				<h2>Feedback form</h2>
+				<p>Opens your email client with the details you provide.</p>
+			</div>
 			<label>
 				Name
 				<input name="name" autocomplete="name" required />
@@ -53,23 +56,28 @@ const contactEmail = 'vtechinf1@gmail.com';
 			<button class="button primary" type="submit">Send with email client</button>
 		</form>
 
-		<aside class="notice">
-			<h2>Contact details</h2>
+		<aside class="notice contact-guidance">
+			<h2>Direct contact</h2>
 			<p>
-				Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+				Email VTech App directly at <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
 			</p>
+			<a class="button" href={`mailto:${contactEmail}`}>Email VTech App</a>
+
+			<h3>For bug reports</h3>
 			<p>
-				The form opens the visitor's email client and sends the message to this address. Visitors
-				can also copy the address and send email manually from Gmail, Outlook, Thunderbird, or
-				another mail client.
+				Include the app name, Windows version, what you expected, what happened, and the steps
+				that reproduce the problem.
 			</p>
-			<h2>Privacy note</h2>
-			<p>This site does not create user accounts.</p>
+
+			<h3>For feature requests</h3>
 			<p>
-				Contact form submissions are used only to respond to feedback or support requests.
+				Describe the workflow, the files or systems involved, and how the utility should help.
 			</p>
+
+			<h3>Privacy note</h3>
 			<p>
-				Do not send passwords, license keys, private tokens, or sensitive data through the form.
+				This site has no accounts or database. Do not send passwords, private tokens, license
+				keys, or sensitive data through the form.
 			</p>
 		</aside>
 	</section>

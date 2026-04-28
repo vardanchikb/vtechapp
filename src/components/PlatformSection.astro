@@ -32,9 +32,12 @@ const { title, description, apps = [] } = Astro.props as {
 				{apps.map((app) => <AppCard app={app} />)}
 			</div>
 		) : (
-			<div class="notice">
-				<h2>Linux Apps Coming Soon</h2>
-				<p>Linux utilities are planned for future releases. No Linux downloads are available yet.</p>
+			<div class="empty-state">
+				<div class="app-mark linux-planned" aria-hidden="true"><span></span></div>
+				<div>
+					<h2>Linux Apps Coming Soon</h2>
+					<p>Linux utilities are planned for future releases. No Linux downloads are available yet.</p>
+				</div>
 			</div>
 		)
 	}

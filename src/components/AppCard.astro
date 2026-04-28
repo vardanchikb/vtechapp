@@ -10,10 +10,11 @@ interface App {
 }
 
 const { app } = Astro.props as { app: App };
+const iconClass = `app-mark ${app.slug}`;
 ---
 
 <article class="app-card">
-	<img src={app.icon} alt="" width="56" height="56" loading="lazy" />
+	<div class={iconClass} aria-hidden="true"><span></span></div>
 	<div>
 		<span class="status">{app.status}</span>
 		<h3>{app.name}</h3>
@@ -21,7 +22,7 @@ const { app } = Astro.props as { app: App };
 	</div>
 	<p class="meta">{app.platform} utility</p>
 	<ul class="tags" aria-label={`${app.name} tags`}>
-		{app.tags.slice(0, 4).map((tag) => <li class="tag">{tag}</li>)}
+		{app.tags.slice(0, 3).map((tag) => <li class="tag">{tag}</li>)}
 	</ul>
 	<a class="button" href={`/apps/${app.slug}/`}>View details</a>
 </article>
