@@ -62,10 +62,17 @@ Put app icons in `public/icons/` and screenshots in `public/screenshots/`. Use r
 
 ## Releasing Downloads
 
-All current apps are marked Coming Soon and have inactive download buttons. When an app is released:
+Static release files can be placed in `public/downloads/`. The current Windows app folders are:
 
-1. Upload the real release artifact to the official hosting location.
-2. Update `downloadUrl` in `src/data/apps.json`.
+- `public/downloads/windows/folder-size-explorer/`
+- `public/downloads/windows/permission-preserving-file-copier/`
+- `public/downloads/windows/windows-file-server-permission-auditor/`
+
+When an app is released:
+
+1. Put the real release artifact in the matching folder under `public/downloads/`.
+2. Add `checksums.txt` and optional release notes.
+3. Update `downloadUrl` in `src/data/apps.json` using a root-relative URL such as `/downloads/windows/folder-size-explorer/folder-size-explorer-1.0.0-windows-x64.zip`.
 3. Update `status`, `currentVersion`, `releaseDate`, and `changelog`.
 4. Update page logic if downloads should become active for released apps.
 
