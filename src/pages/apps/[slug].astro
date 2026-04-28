@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import AppIcon from '../../components/AppIcon.astro';
 import apps from '../../data/apps.json';
 
 export function getStaticPaths() {
@@ -11,7 +12,7 @@ export function getStaticPaths() {
 
 const { app } = Astro.props;
 const hasSource = Boolean(app.sourceUrl);
-const iconClass = `app-mark ${app.slug}`;
+const hasDownload = Boolean(app.downloadUrl);
 ---
 
 <Layout
@@ -26,19 +27,26 @@ const iconClass = `app-mark ${app.slug}`;
 				<p>{app.shortDescription}</p>
 				<div class="hero-actions">
 					<span class="status">{app.status}</span>
+					{hasDownload ? <a class="button primary" href={app.downloadUrl}>Download</a> : null}
 					<a class="button primary" href={app.donationUrl} rel="noopener noreferrer">Donate</a>
 					<a class="button" href={`mailto:${app.supportEmail}`}>Contact support</a>
 				</div>
 			</div>
 			<aside class="hero-panel">
-				<div class={iconClass} aria-hidden="true"><span></span></div>
+				<AppIcon slug={app.slug} />
 				<div class="meta-grid">
 					<div class="meta-item"><span>Platform</span><strong>{app.platform}</strong></div>
 					<div class="meta-item"><span>Status</span><strong>{app.status}</strong></div>
 					<div class="meta-item"><span>Version</span><strong>{app.currentVersion}</strong></div>
 					<div class="meta-item"><span>Release</span><strong>{app.releaseDate}</strong></div>
 				</div>
-				<span class="button disabled" aria-disabled="true">Download Coming Soon</span>
+				{
+					hasDownload ? (
+						<a class="button primary" href={app.downloadUrl}>Download</a>
+					) : (
+						<span class="button disabled" aria-disabled="true">Download Coming Soon</span>
+					)
+				}
 			</aside>
 		</header>
 
@@ -52,10 +60,16 @@ const iconClass = `app-mark ${app.slug}`;
 			</div>
 			<div class="card">
 				<h2>Release status</h2>
-				<p>
-					This app is in development. The download button will remain disabled until an official
-					build is available from VTech App.
-				</p>
+				{
+					hasDownload ? (
+						<p>This app is available from the official VTech App download link.</p>
+					) : (
+						<p>
+							This app is in development. The download button will remain disabled until an official
+							build is available from VTech App.
+						</p>
+					)
+				}
 			</div>
 		</section>
 

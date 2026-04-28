@@ -90,20 +90,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 				<p class="copyright">Copyright &copy; {new Date().getFullYear()} VTech App.</p>
 			</div>
 		</footer>
-		<script>
-			const toggle = document.querySelector('.nav-toggle');
-			const nav = document.getElementById('main-nav');
-			toggle?.addEventListener('click', () => {
-				const open = nav?.classList.toggle('open');
-				toggle.setAttribute('aria-expanded', String(open));
-			});
-			nav?.querySelectorAll('a').forEach((link) => {
-				link.addEventListener('click', () => {
-					nav.classList.remove('open');
-					toggle?.setAttribute('aria-expanded', 'false');
-				});
-			});
-		</script>
+		<script src="/nav.js" defer></script>
 	</body>
 </html>
 

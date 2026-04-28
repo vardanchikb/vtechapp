@@ -1,5 +1,6 @@
 ---
 import AppCard from './AppCard.astro';
+import AppIcon from './AppIcon.astro';
 
 interface App {
 	name: string;
@@ -33,7 +34,7 @@ const { title, description, apps = [] } = Astro.props as {
 			</div>
 		) : (
 			<div class="empty-state">
-				<div class="app-mark linux-planned" aria-hidden="true"><span></span></div>
+				<AppIcon slug="linux-planned" />
 				<div>
 					<h2>Linux Apps Coming Soon</h2>
 					<p>Linux utilities are planned for future releases. No Linux downloads are available yet.</p>

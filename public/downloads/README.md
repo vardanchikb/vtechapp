@@ -1,6 +1,10 @@
 # VTech App Download Files
 
-Put release files in these folders before building/deploying the site.
+Put small release metadata files in these folders before building/deploying the site.
+
+Do not put large installers here. Cloudflare Pages has a 25 MiB per-file static
+asset limit, so large `.exe` or `.zip` releases should be uploaded to GitHub
+Releases or Cloudflare R2 instead.
 
 ## Current Windows Apps
 
@@ -10,9 +14,8 @@ Put release files in these folders before building/deploying the site.
 
 ## Suggested Files Per Release
 
-For each app release, include:
+For each app release, include small metadata here:
 
-- Installer or portable archive, for example `folder-size-explorer-1.0.0-windows-x64.zip`
 - `checksums.txt`
 - Optional `release-notes.txt`
 
@@ -24,6 +27,6 @@ After adding files, update `src/data/apps.json`:
 - `releaseDate`
 - `changelog`
 
-Example public URL:
+Example public metadata URL:
 
-`/downloads/windows/folder-size-explorer/folder-size-explorer-1.0.0-windows-x64.zip`
+`/downloads/windows/folder-size-explorer/checksums.txt`

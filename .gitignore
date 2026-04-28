@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# local release artifacts kept outside Cloudflare Pages deploys
+releases/
+
 # macOS-specific files
 .DS_Store
 

@@ -70,11 +70,11 @@ Static release files can be placed in `public/downloads/`. The current Windows a
 
 When an app is released:
 
-1. Put the real release artifact in the matching folder under `public/downloads/`.
-2. Add `checksums.txt` and optional release notes.
-3. Update `downloadUrl` in `src/data/apps.json` using a root-relative URL such as `/downloads/windows/folder-size-explorer/folder-size-explorer-1.0.0-windows-x64.zip`.
-3. Update `status`, `currentVersion`, `releaseDate`, and `changelog`.
-4. Update page logic if downloads should become active for released apps.
+1. Upload large release artifacts to GitHub Releases or Cloudflare R2. Cloudflare Pages has a 25 MiB per-file asset limit, so do not place large installers in `public/`.
+2. Keep small metadata files such as `checksums.txt` and optional release notes in the matching folder under `public/downloads/`.
+3. Update `downloadUrl` in `src/data/apps.json` using the GitHub Release or R2 URL.
+4. Update `status`, `currentVersion`, `releaseDate`, and `changelog`.
+5. Update page logic if downloads should become active for released apps.
 
 Future download hosting can use Cloudflare R2 or GitHub Releases. If download tracking is needed later, prefer privacy-conscious aggregate tracking and document it in the privacy policy before enabling it.
 

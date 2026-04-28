@@ -7,14 +7,14 @@ const windowsApps = apps.filter((app) => app.platform === 'Windows');
 
 <Layout
 	title="Downloads | VTech App"
-	description="Official VTech App downloads. Windows apps are coming soon and download buttons are disabled until release."
+	description="Official VTech App downloads, release status, versions, and safety information."
 >
 	<header class="page-heading">
 		<p class="eyebrow">Release center</p>
-		<h1>Official downloads will appear here when ready.</h1>
+		<h1>Official VTech App downloads.</h1>
 		<p>
-			VTech App releases will be published only through official vtech-app.com links. Current
-			utilities are still in development, so no active download buttons are shown.
+			VTech App releases are published only through official vtech-app.com links. Apps still in
+			development remain marked Coming Soon.
 		</p>
 	</header>
 
@@ -42,7 +42,14 @@ const windowsApps = apps.filter((app) => app.platform === 'Windows');
 					<span>{app.platform}</span>
 					<span>{app.currentVersion}</span>
 					<span class="status">{app.status}</span>
-					<a class="button" href={`/apps/${app.slug}/`}>Details</a>
+					<div class="actions">
+						{app.downloadUrl ? (
+							<a class="button primary" href={app.downloadUrl}>Download</a>
+						) : (
+							<span class="button disabled" aria-disabled="true">Coming Soon</span>
+						)}
+						<a class="button" href={`/apps/${app.slug}/`}>Details</a>
+					</div>
 				</article>
 			))}
 		</div>
@@ -58,8 +65,8 @@ const windowsApps = apps.filter((app) => app.platform === 'Windows');
 		<article class="notice">
 			<h2>Download safety</h2>
 			<p>
-				Future releases will include official links, version numbers, changelogs, and checksums
-				so users can verify what they are installing.
+				Official releases include site-hosted links, version status, changelog entries, and
+				checksums when release files are published.
 			</p>
 		</article>
 	</section>

@@ -1,0 +1,2 @@
+SHA256  FolderSizeExplorer.exe
+5d0cd743694725d5d91c3829b05e8c51e8d490abd73534eb040e690848ef4f33  FolderSizeExplorer.exe
