@@ -28,7 +28,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/brand/vtech-logo.svg" />
+		<link rel="icon" type="image/png" href="/brand/vtech-logo.png" />
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="description" content={description} />
@@ -47,7 +47,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		<header class="site-header">
 			<div class="container nav-shell">
 				<a class="brand" href="/" aria-label="VTech App home">
-					<img class="brand-logo" src="/brand/vtech-logo.svg" alt="" width="42" height="42" />
+					<img class="brand-logo" src="/brand/vtech-logo.png" alt="" width="42" height="42" />
 					<span>
 						<strong>VTech App</strong>
 						<small>Practical system utilities</small>
@@ -236,6 +236,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		width: 42px;
 		height: 42px;
 		border-radius: 13px;
+		object-fit: cover;
 		box-shadow: 0 0 24px rgba(57, 215, 176, 0.13);
 	}
 
@@ -356,7 +357,22 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		box-shadow: var(--shadow-soft);
 	}
 
+	.home-hero {
+		grid-template-columns: minmax(0, 0.72fr) minmax(240px, 0.28fr);
+		min-height: clamp(540px, 62vw, 720px);
+		padding: clamp(1.5rem, 5vw, 4.6rem);
+		background:
+			linear-gradient(90deg, rgba(4, 13, 17, 0.95) 0%, rgba(4, 13, 17, 0.84) 35%, rgba(4, 13, 17, 0.38) 64%, rgba(4, 13, 17, 0.18) 100%),
+			linear-gradient(180deg, rgba(4, 13, 17, 0.2), rgba(4, 13, 17, 0.58)),
+			url("/images/vtech-hero-banner.png");
+		background-position: center;
+		background-size: cover;
+		overflow: hidden;
+	}
+
 	.hero-copy {
+		position: relative;
+		z-index: 1;
 		max-width: 620px;
 	}
 
