@@ -14,7 +14,7 @@
     "donationUrl": "https://www.buymeacoffee.com/vtechapp",
     "sourceUrl": "",
     "changelog": ["Initial public release is in development."],
-    "supportEmail": "support@vtech-app.com",
+    "supportEmail": "vtechinf1@gmail.com",
     "tags": ["Windows", "storage", "disk usage", "folder size", "cleanup", "system utility", "sysadmin"]
   },
   {
@@ -32,7 +32,7 @@
     "donationUrl": "https://www.buymeacoffee.com/vtechapp",
     "sourceUrl": "",
     "changelog": ["Initial public release is in development."],
-    "supportEmail": "support@vtech-app.com",
+    "supportEmail": "vtechinf1@gmail.com",
     "tags": ["Windows", "file copy", "NTFS permissions", "migration", "backup", "multithreaded", "sysadmin"]
   },
   {
@@ -50,7 +50,7 @@
     "donationUrl": "https://www.buymeacoffee.com/vtechapp",
     "sourceUrl": "",
     "changelog": ["Initial public release is in development."],
-    "supportEmail": "support@vtech-app.com",
+    "supportEmail": "vtechinf1@gmail.com",
     "tags": ["Windows", "file server", "NTFS", "permissions", "audit", "security", "sysadmin"]
   }
 ]

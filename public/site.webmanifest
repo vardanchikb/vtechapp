@@ -8,8 +8,8 @@
   "theme_color": "#071014",
   "icons": [
     {
-      "src": "/icons/placeholder-app.svg",
-      "sizes": "128x128",
+      "src": "/brand/vtech-logo.svg",
+      "sizes": "220x220",
       "type": "image/svg+xml",
       "purpose": "any"
     }

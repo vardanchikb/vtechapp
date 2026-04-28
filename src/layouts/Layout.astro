@@ -25,7 +25,7 @@ const navItems = [
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/brand/vtech-logo.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="description" content={description} />
@@ -40,28 +40,38 @@ const navItems = [
 		<title>{title}</title>
 	</head>
 	<body>
+		<div class="ambient ambient-one"></div>
+		<div class="ambient ambient-two"></div>
 		<div class="site-shell">
 			<header class="site-header">
 				<a class="brand" href="/" aria-label="VTech App home">
-					<span class="brand-mark">VT</span>
+					<img class="brand-logo" src="/brand/vtech-logo.svg" alt="" width="46" height="46" />
 					<span>
 						<strong>VTech App</strong>
-						<small>Independent free software</small>
+						<small>Practical system utilities</small>
 					</span>
 				</a>
 				<nav class="top-nav" aria-label="Main navigation">
 					{navItems.map((item) => <a href={item.href}>{item.label}</a>)}
 				</nav>
 			</header>
+			<div class="site-info-panel" aria-label="Site information">
+				<span>Official site: vtech-app.com</span>
+				<span>No accounts or login</span>
+				<span>Downloads coming soon</span>
+				<a href="mailto:vtechinf1@gmail.com">vtechinf1@gmail.com</a>
+			</div>
 			<main>
 				<slot />
 			</main>
 			<footer class="site-footer">
 				<div>
 					<strong>VTech App</strong>
-					<p>Independent free software for practical system work.</p>
+					<p>Independent free software for practical system work. Contact: <a href="mailto:vtechinf1@gmail.com">vtechinf1@gmail.com</a></p>
 				</div>
 				<nav aria-label="Footer navigation">
+					<a href="/apps/">Apps</a>
+					<a href="/downloads/">Downloads</a>
 					<a href="/privacy/">Privacy</a>
 					<a href="/contact/">Contact</a>
 					<a href="/donate/">Donate</a>
@@ -109,6 +119,31 @@ const navItems = [
 		line-height: 1.6;
 	}
 
+	.ambient {
+		position: fixed;
+		z-index: -2;
+		border-radius: 999px;
+		filter: blur(10px);
+		opacity: 0.7;
+		pointer-events: none;
+	}
+
+	.ambient-one {
+		top: 90px;
+		right: 7vw;
+		width: 220px;
+		height: 220px;
+		background: radial-gradient(circle, rgba(55, 215, 161, 0.18), transparent 68%);
+	}
+
+	.ambient-two {
+		bottom: 12vh;
+		left: 4vw;
+		width: 280px;
+		height: 280px;
+		background: radial-gradient(circle, rgba(117, 214, 255, 0.12), transparent 70%);
+	}
+
 	body::before {
 		position: fixed;
 		inset: 0;
@@ -136,11 +171,15 @@ const navItems = [
 	}
 
 	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 5;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 24px;
 		padding: 24px 0;
+		backdrop-filter: blur(18px);
 	}
 
 	.brand {
@@ -150,17 +189,10 @@ const navItems = [
 		text-decoration: none;
 	}
 
-	.brand-mark {
-		display: grid;
+	.brand-logo {
 		width: 46px;
 		height: 46px;
-		place-items: center;
-		border: 1px solid var(--line-strong);
 		border-radius: 14px;
-		background: linear-gradient(135deg, rgba(55, 215, 161, 0.26), rgba(117, 214, 255, 0.15));
-		color: var(--accent);
-		font-weight: 800;
-		letter-spacing: -0.06em;
 		box-shadow: 0 0 28px rgba(55, 215, 161, 0.12);
 	}
 
@@ -194,10 +226,41 @@ const navItems = [
 	}
 
 	.top-nav a:hover,
-	.site-footer a:hover {
+	.site-footer a:hover,
+	.site-info-panel a:hover {
 		border-color: var(--line);
 		color: var(--text);
 		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.site-info-panel {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		align-items: center;
+		margin-bottom: 10px;
+		padding: 10px;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		background: rgba(7, 16, 20, 0.66);
+		backdrop-filter: blur(18px);
+	}
+
+	.site-info-panel span,
+	.site-info-panel a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 30px;
+		padding: 5px 10px;
+		border-radius: 999px;
+		color: var(--muted);
+		font-size: 0.86rem;
+		text-decoration: none;
+	}
+
+	.site-info-panel span:first-child {
+		color: var(--accent);
+		background: rgba(55, 215, 161, 0.08);
 	}
 
 	main {
@@ -220,6 +283,66 @@ const navItems = [
 			linear-gradient(135deg, rgba(12, 24, 30, 0.92), rgba(11, 22, 27, 0.74)),
 			radial-gradient(circle at top right, rgba(55, 215, 161, 0.18), transparent 25rem);
 		box-shadow: var(--shadow);
+	}
+
+	.hero.visual-hero {
+		grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+		padding: 32px;
+	}
+
+	.hero-copy {
+		padding: 18px 0 18px 14px;
+	}
+
+	.hero-motto {
+		display: inline-flex;
+		width: fit-content;
+		margin: 18px 0 0;
+		padding: 10px 14px;
+		border: 1px solid rgba(55, 215, 161, 0.34);
+		border-radius: 999px;
+		background: rgba(55, 215, 161, 0.09);
+		color: var(--accent);
+		font-weight: 900;
+		letter-spacing: -0.01em;
+	}
+
+	.hero-visual {
+		position: relative;
+		min-height: 420px;
+		overflow: hidden;
+		border: 1px solid var(--line-strong);
+		border-radius: 28px;
+		background: var(--panel-strong);
+	}
+
+	.hero-visual img {
+		width: 100%;
+		height: 100%;
+		min-height: 420px;
+		object-fit: cover;
+	}
+
+	.hero-visual-card {
+		position: absolute;
+		right: 18px;
+		bottom: 18px;
+		left: 18px;
+		display: grid;
+		gap: 6px;
+		padding: 16px;
+		border: 1px solid var(--line);
+		border-radius: 20px;
+		background: rgba(7, 16, 20, 0.78);
+		backdrop-filter: blur(14px);
+	}
+
+	.hero-visual-card strong {
+		color: var(--text);
+	}
+
+	.hero-visual-card span {
+		color: var(--muted);
 	}
 
 	.hero h1,
@@ -268,6 +391,39 @@ const navItems = [
 		background:
 			linear-gradient(145deg, rgba(18, 36, 44, 0.92), rgba(9, 19, 24, 0.92)),
 			linear-gradient(45deg, transparent 0 48%, rgba(117, 214, 255, 0.18) 48% 52%, transparent 52% 100%);
+	}
+
+	.terminal-window {
+		align-content: start;
+		gap: 14px;
+		overflow: hidden;
+	}
+
+	.terminal-bar {
+		display: flex;
+		gap: 7px;
+		padding-bottom: 12px;
+		border-bottom: 1px solid var(--line);
+	}
+
+	.terminal-bar span {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: var(--accent);
+		box-shadow: 18px 0 0 var(--warning), 36px 0 0 var(--accent-2);
+	}
+
+	.terminal-line {
+		margin: 0;
+		color: var(--muted);
+		font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+		font-size: 0.92rem;
+	}
+
+	.terminal-line strong {
+		color: var(--accent);
+		font-weight: 800;
 	}
 
 	.hero-actions,
@@ -325,6 +481,28 @@ const navItems = [
 		padding: 24px;
 	}
 
+	.card,
+	.app-card,
+	.notice,
+	.download-row,
+	.form-card {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.card::before,
+	.app-card::before,
+	.notice::before,
+	.download-row::before,
+	.form-card::before {
+		position: absolute;
+		inset: 0;
+		content: "";
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 34%);
+		opacity: 0.45;
+		pointer-events: none;
+	}
+
 	.card h2,
 	.card h3,
 	.app-card h3,
@@ -357,6 +535,13 @@ const navItems = [
 		display: flex;
 		flex-direction: column;
 		gap: 14px;
+		transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+	}
+
+	.app-card:hover {
+		transform: translateY(-3px);
+		border-color: var(--line-strong);
+		background: rgba(18, 36, 44, 0.92);
 	}
 
 	.app-card img {
@@ -405,6 +590,83 @@ const navItems = [
 	.stack {
 		display: grid;
 		gap: 16px;
+	}
+
+	.feature-strip {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 12px;
+		margin-top: 18px;
+	}
+
+	.feature-pill {
+		border: 1px solid var(--line);
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.035);
+		padding: 16px;
+	}
+
+	.feature-pill strong {
+		display: block;
+		color: var(--accent-2);
+		font-size: 1.2rem;
+	}
+
+	.feature-pill span {
+		color: var(--muted);
+		font-size: 0.9rem;
+	}
+
+	.category-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 22px;
+	}
+
+	.category-chips a,
+	.category-chips span {
+		display: inline-flex;
+		align-items: center;
+		min-height: 38px;
+		padding: 8px 12px;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.035);
+		color: var(--muted);
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	.category-chips a:hover {
+		border-color: var(--line-strong);
+		color: var(--text);
+	}
+
+	.catalog-panel {
+		display: grid;
+		grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+		gap: 18px;
+	}
+
+	.catalog-stat {
+		display: grid;
+		place-items: center;
+		min-height: 180px;
+		text-align: center;
+	}
+
+	.catalog-stat strong {
+		display: block;
+		color: var(--accent);
+		font-size: clamp(3rem, 8vw, 5.6rem);
+		line-height: 1;
+		letter-spacing: -0.08em;
+	}
+
+	.catalog-stat span {
+		color: var(--muted);
+		font-weight: 800;
 	}
 
 	.gallery {
@@ -483,17 +745,36 @@ const navItems = [
 		}
 
 		.hero,
+		.hero.visual-hero,
 		.grid,
 		.two-column,
 		.gallery {
 			grid-template-columns: 1fr;
 		}
 
+		.catalog-panel {
+			grid-template-columns: 1fr;
+		}
+
+		.feature-strip {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
 		.hero {
 			padding: 28px;
 		}
 
+		.hero-copy {
+			padding: 0;
+		}
+
 		.download-row {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.feature-strip {
 			grid-template-columns: 1fr;
 		}
 	}

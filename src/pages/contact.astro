@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import apps from '../data/apps.json';
+
+const contactEmail = 'vtechinf1@gmail.com';
 ---
 
 <Layout
@@ -12,12 +14,13 @@ import apps from '../data/apps.json';
 		<h1>Feedback and support</h1>
 		<p>
 			Use this static-friendly form for feedback, feature requests, bug reports, and support
-			questions. Replace the placeholder Formspree endpoint before production use.
+			questions, or email VTech App directly at {contactEmail}.
 		</p>
+		<a class="button primary" href={`mailto:${contactEmail}`}>Email {contactEmail}</a>
 	</header>
 
 	<section class="two-column">
-		<form class="form-card" action="https://formspree.io/f/placeholder" method="POST">
+		<form class="form-card" action={`mailto:${contactEmail}?subject=VTech%20App%20Feedback`} method="POST" enctype="text/plain">
 			<label>
 				Name
 				<input name="name" autocomplete="name" required />
@@ -47,10 +50,19 @@ import apps from '../data/apps.json';
 				Message
 				<textarea name="message" required></textarea>
 			</label>
-			<button class="button primary" type="submit">Send feedback</button>
+			<button class="button primary" type="submit">Send with email client</button>
 		</form>
 
 		<aside class="notice">
+			<h2>Contact details</h2>
+			<p>
+				Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+			</p>
+			<p>
+				The form opens the visitor's email client and sends the message to this address. Visitors
+				can also copy the address and send email manually from Gmail, Outlook, Thunderbird, or
+				another mail client.
+			</p>
 			<h2>Privacy note</h2>
 			<p>This site does not create user accounts.</p>
 			<p>

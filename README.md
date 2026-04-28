@@ -4,6 +4,8 @@ Official static website for `vtech-app.com`, built with Astro for Cloudflare Pag
 
 VTech App is an independent free software provider focused on practical utilities for Windows users, technicians, and system administrators. The site is a static software catalog, download portal, donation page, and support/feedback entry point.
 
+Public contact email: `vtechinf1@gmail.com`.
+
 ## Local Development
 
 ```bash

@@ -5,10 +5,11 @@ import Layout from '../layouts/Layout.astro';
 	title="VTech App | Free Windows Utilities Coming Soon"
 	description="VTech App builds practical free software utilities for Windows users, technicians, and system administrators. Windows tools are in development and Linux tools are planned."
 >
-	<section class="hero">
-		<div>
+	<section class="hero visual-hero">
+		<div class="hero-copy">
 			<p class="eyebrow">Official vtech-app.com website</p>
-			<h1>Welcome to VTech App.</h1>
+			<h1>Practical utilities built by experience and amplified by AI.</h1>
+			<p class="hero-motto">25 years of experience powered with AI capabilities.</p>
 			<p>
 				VTech App builds practical free software utilities for Windows users, technicians, and
 				system administrators. The first Windows tools are currently in development, with Linux
@@ -18,13 +19,28 @@ import Layout from '../layouts/Layout.astro';
 				<a class="button primary" href="/apps/">Browse apps</a>
 				<a class="button" href="/contact/">Send feedback</a>
 			</div>
+			<div class="category-chips" aria-label="Catalog categories">
+				<a href="/apps/">Storage analysis</a>
+				<a href="/apps/">Permission tools</a>
+				<a href="/apps/">File server auditing</a>
+				<span>Linux planned</span>
+			</div>
 		</div>
-		<aside class="hero-panel" aria-label="Project status">
-			<span class="status">All apps coming soon</span>
-			<h2>Static, fast, and focused on official releases.</h2>
-			<p>Downloads will appear only when real production builds are ready.</p>
-		</aside>
+		<figure class="hero-visual">
+			<img src="/brand/human-ai-banner.svg" alt="Human and AI interaction illustration for VTech App" width="1200" height="760" />
+			<figcaption class="hero-visual-card">
+				<strong>Human judgment + AI capability</strong>
+				<span>Focused on useful tools for Windows users, technicians, and administrators.</span>
+			</figcaption>
+		</figure>
 	</section>
+
+	<div class="feature-strip" aria-label="VTech App principles">
+		<div class="feature-pill"><strong>Free</strong><span>No paid-service dependency</span></div>
+		<div class="feature-pill"><strong>Static</strong><span>Fast Cloudflare Pages site</span></div>
+		<div class="feature-pill"><strong>Useful</strong><span>Tools for real admin work</span></div>
+		<div class="feature-pill"><strong>Direct</strong><span>Support via vtechinf1@gmail.com</span></div>
+	</div>
 
 	<section class="grid" aria-label="Site highlights">
 		<article class="card">
@@ -45,8 +61,50 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Feedback and suggestions</h2>
 			<p>
 				Use the contact form to request features, report issues, or suggest practical utilities
-				that would help your workflow.
+				that would help your workflow. You can also email vtechinf1@gmail.com directly.
 			</p>
+		</article>
+	</section>
+
+	<section class="catalog-panel">
+		<div class="card catalog-stat">
+			<div>
+				<strong>3</strong>
+				<span>Windows utilities in development</span>
+			</div>
+		</div>
+		<div class="card">
+			<p class="eyebrow">Catalog status</p>
+			<h2>Official downloads will appear only when releases are ready.</h2>
+			<p>
+				VTech App is currently a launch catalog and support hub. Each app has a detail page,
+				release metadata, tags, screenshots, and a clear Coming Soon download state.
+			</p>
+			<div class="actions">
+				<a class="button" href="/downloads/">View downloads</a>
+				<a class="button" href="/apps/">View app catalog</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="two-column">
+		<aside class="hero-panel terminal-window" aria-label="Project status">
+			<div class="terminal-bar"><span></span></div>
+			<p class="terminal-line"><strong>vtech-app.com</strong> status</p>
+			<p class="terminal-line">&gt; catalog: windows utilities</p>
+			<p class="terminal-line">&gt; downloads: coming soon</p>
+			<p class="terminal-line">&gt; linux tools: planned</p>
+			<p class="terminal-line">&gt; accounts: none</p>
+			<p class="terminal-line">&gt; backend: static only</p>
+		</aside>
+		<article class="notice">
+			<p class="eyebrow">Contact</p>
+			<h2>Questions, suggestions, and support.</h2>
+			<p>
+				Reach VTech App directly at <a href="mailto:vtechinf1@gmail.com">vtechinf1@gmail.com</a>.
+				Use your own email client or the contact form on the Contact page.
+			</p>
+			<a class="button" href="/contact/">Contact VTech App</a>
 		</article>
 	</section>
 
