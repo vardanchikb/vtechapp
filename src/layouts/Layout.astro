@@ -87,10 +87,17 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 					<a href="/contact/">Contact</a>
 					<a href="/privacy/">Privacy</a>
 				</nav>
+				<div class="footer-trust" aria-label="Site information">
+					<span>No accounts</span>
+					<span>No tracking</span>
+					<span>Static site</span>
+					<span>Free software</span>
+				</div>
 				<p class="copyright">Copyright &copy; {new Date().getFullYear()} VTech App.</p>
 			</div>
 		</footer>
 		<script src="/nav.js" defer></script>
+		<script src="/contact-form.js" defer></script>
 	</body>
 </html>
 
@@ -462,6 +469,13 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		box-shadow: 0 12px 30px rgba(57, 215, 176, 0.15);
 	}
 
+	.button.primary:hover {
+		transform: translateY(-1px);
+		border-color: rgba(57, 215, 176, 0.85);
+		background: linear-gradient(135deg, #4ee0bb, #82ead5);
+		box-shadow: 0 16px 38px rgba(57, 215, 176, 0.25);
+	}
+
 	.button.disabled,
 	button[disabled] {
 		cursor: not-allowed;
@@ -548,6 +562,12 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 
 	.feature-pill {
 		min-height: 124px;
+		transition: transform 160ms ease, border-color 160ms ease;
+	}
+
+	.feature-pill:hover {
+		transform: translateY(-2px);
+		border-color: var(--border-strong);
 	}
 
 	.feature-pill strong {
@@ -608,6 +628,17 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	.app-icon svg {
 		width: 26px;
 		height: 26px;
+	}
+
+	.app-icon--lg {
+		width: 68px;
+		height: 68px;
+		border-radius: 18px;
+	}
+
+	.app-icon--lg svg {
+		width: 36px;
+		height: 36px;
 	}
 
 	.status,
@@ -782,6 +813,39 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		resize: vertical;
 	}
 
+	input:focus,
+	select:focus,
+	textarea:focus {
+		outline: none;
+		border-color: rgba(57, 215, 176, 0.5);
+		box-shadow: 0 0 0 3px rgba(57, 215, 176, 0.1);
+	}
+
+	.form-result {
+		display: none;
+		padding: 0.7rem 1rem;
+		border-radius: var(--radius-sm);
+		font-size: 0.9rem;
+	}
+
+	.form-result--ok,
+	.form-result--err {
+		display: block;
+	}
+
+	.form-result--ok {
+		border: 1px solid rgba(57, 215, 176, 0.3);
+		background: rgba(57, 215, 176, 0.08);
+		color: #b9fff0;
+	}
+
+	.form-result--err {
+		border: 1px solid rgba(255, 139, 139, 0.3);
+		background: rgba(255, 139, 139, 0.08);
+		color: var(--danger);
+	}
+
+
 	.contact-guidance {
 		display: grid;
 		align-content: start;
@@ -943,6 +1007,24 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		background: rgba(255, 255, 255, 0.045);
 	}
 
+	.footer-trust {
+		grid-column: 1 / -1;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.footer-trust span {
+		padding: 0.22rem 0.55rem;
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.02);
+		color: var(--soft);
+		font-size: 0.78rem;
+	}
+
 	.copyright {
 		grid-column: 1 / -1;
 		margin: 0;
@@ -1038,10 +1120,6 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	@media (max-width: 600px) {
 		body {
 			font-size: 14.5px;
-		}
-
-		.site-info-panel {
-			border-radius: var(--radius-md);
 		}
 
 		.hero,

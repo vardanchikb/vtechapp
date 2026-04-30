@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const donationUrl = 'https://www.buymeacoffee.com/vtechapp';
+const donationUrl = 'https://ko-fi.com/vtechapp';
 ---
 
 <Layout
@@ -10,12 +10,13 @@ const donationUrl = 'https://www.buymeacoffee.com/vtechapp';
 >
 	<header class="page-heading">
 		<p class="eyebrow">Support development</p>
-		<h1>Donate</h1>
+		<h1>Support VTech App.</h1>
 		<p>
-			VTech App software is free. If the tools are useful to you, donations help support
-			development time, testing, hosting, and future releases.
+			VTech App builds practical free utilities for Windows users, technicians, and system
+			administrators. Optional donations help cover development time, testing, hosting, code
+			signing, and future releases while keeping the tools free.
 		</p>
-		<a class="button primary" href={donationUrl} rel="noopener noreferrer">Support on Buy Me a Coffee</a>
+		<a class="button primary" href={donationUrl} rel="noopener noreferrer">Donate on Ko-fi</a>
 	</header>
 
 	<section class="grid">
@@ -28,16 +29,16 @@ const donationUrl = 'https://www.buymeacoffee.com/vtechapp';
 			<p>Practical utilities need careful testing across real Windows administration scenarios.</p>
 		</article>
 		<article class="card">
-			<h2>Hosting and releases</h2>
-			<p>Support helps cover the website, release hosting, and future app distribution work.</p>
+			<h2>Code signing and releases</h2>
+			<p>Support helps cover release hosting, code signing, and future app distribution work.</p>
 		</article>
 	</section>
 
 	<section class="notice">
 		<h2>No payment processing on this site</h2>
 		<p>
-			VTech App links to a third-party donation provider. No payment processing code is embedded
-			directly into this static website.
+			VTech App links to Ko-fi for optional support. No payment processing code is embedded
+			directly into this static website, and VTech App does not handle payment details.
 		</p>
 	</section>
 </Layout>

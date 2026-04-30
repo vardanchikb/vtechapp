@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import apps from '../data/apps.json';
 
-const contactEmail = 'vtechinf1@gmail.com';
+const contactEmail = 'contact@vtech-app.com';
 ---
 
 <Layout
 	title="Contact and Feedback | VTech App"
-	description="Send feedback, feature requests, bug reports, support questions, or donation questions to VTech App."
+	description="Send feedback, feature requests, bug reports, and support questions to VTech App."
 >
 	<header class="page-heading">
 		<p class="eyebrow">Contact</p>
@@ -19,10 +19,15 @@ const contactEmail = 'vtechinf1@gmail.com';
 	</header>
 
 	<section class="contact-grid">
-		<form class="form-card" action={`mailto:${contactEmail}?subject=VTech%20App%20Feedback`} method="POST" enctype="text/plain">
+		<form id="contact-form" class="form-card" action="https://api.web3forms.com/submit" method="post" novalidate>
+			<input type="hidden" name="access_key" value="528f82b8-dea6-429f-8e6d-f663c1e41d19" />
+			<input type="hidden" name="from_name" value="VTech App Contact Form" />
+			<input type="hidden" name="subject" value="VTech App — Contact Form Submission" />
+			<input type="checkbox" name="botcheck" style="display:none" />
+
 			<div>
 				<h2>Feedback form</h2>
-				<p>Opens your email client with the details you provide.</p>
+				<p>Fill in the form and your message is sent directly to VTech App.</p>
 			</div>
 			<label>
 				Name
@@ -34,14 +39,14 @@ const contactEmail = 'vtechinf1@gmail.com';
 			</label>
 			<label>
 				App name
-				<select name="app-name">
+				<select name="app-name" autocomplete="off">
 					<option value="">General / not app-specific</option>
 					{apps.map((app) => <option value={app.name}>{app.name}</option>)}
 				</select>
 			</label>
 			<label>
 				Feedback type
-				<select name="feedback-type" required>
+				<select name="feedback-type" autocomplete="off" required>
 					<option>General feedback</option>
 					<option>Feature request</option>
 					<option>Bug report</option>
@@ -53,7 +58,8 @@ const contactEmail = 'vtechinf1@gmail.com';
 				Message
 				<textarea name="message" required></textarea>
 			</label>
-			<button class="button primary" type="submit">Send with email client</button>
+			<button class="button primary" type="submit">Send message</button>
+			<div id="form-result" class="form-result" role="status" aria-live="polite"></div>
 		</form>
 
 		<aside class="notice contact-guidance">

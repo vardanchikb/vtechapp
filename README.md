@@ -80,4 +80,4 @@ Future download hosting can use Cloudflare R2 or GitHub Releases. If download tr
 
 ## Donations
 
-Donation links currently use a placeholder Buy Me a Coffee URL. Replace `https://www.buymeacoffee.com/vtechapp` in `src/data/apps.json` and `src/pages/donate.astro` when the final donation page is ready.
+Donation links use the VTech App Ko-fi page: `https://ko-fi.com/vtechapp`.
