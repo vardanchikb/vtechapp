@@ -2,14 +2,18 @@
 interface Props {
 	title?: string;
 	description?: string;
+	structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
 	title = 'VTech App | Practical Free Software Utilities',
 	description = 'VTech App builds practical free software utilities for Windows users, technicians, and system administrators.',
+	structuredData,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://vtech-app.com');
+const socialImage = new URL('/images/vtech-hero-banner.png', Astro.site ?? 'https://vtech-app.com');
+const structuredDataJson = structuredData ? JSON.stringify(structuredData).replace(/</g, '\\u003c') : null;
 const currentPath = Astro.url.pathname;
 const navItems = [
 	{ href: '/', label: 'Home' },
@@ -39,7 +43,10 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
-		<meta name="twitter:card" content="summary" />
+		<meta property="og:image" content={socialImage} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content={socialImage} />
+		{structuredDataJson ? <script type="application/ld+json" set:html={structuredDataJson} /> : null}
 		<title>{title}</title>
 	</head>
 	<body>

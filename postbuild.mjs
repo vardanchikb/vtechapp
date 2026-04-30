@@ -8,6 +8,7 @@ const config = {
 	rules: [{ type: 'ESModule', globs: ['**/*.js', '**/*.mjs'] }],
 	assets: { binding: 'ASSETS', directory: 'dist/client' },
 	observability: { enabled: true },
+	secrets: { required: ['RESEND_API_KEY'] },
 };
 
 writeFileSync('wrangler.deploy.json', JSON.stringify(config, null, '\t'));

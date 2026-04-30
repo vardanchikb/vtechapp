@@ -17,6 +17,7 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.dev.vars
 
 # local release artifacts kept outside Cloudflare Pages deploys
 releases/

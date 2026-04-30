@@ -1,0 +1,18 @@
+# VTech App
+
+VTech App is an independent free software project that publishes practical utilities for Windows users, technicians, and system administrators.
+
+Website: https://vtech-app.com/
+Apps: https://vtech-app.com/apps/
+Downloads: https://vtech-app.com/downloads/
+Contact: https://vtech-app.com/contact/
+
+## Current apps
+
+- Folder Size Explorer: Windows storage analysis tool for finding what consumes space across folders, drives, and file trees.
+- Permission Preserving File Copier: planned Windows file and folder copy tool designed to preserve NTFS permissions.
+- Windows File Server Permission Auditor: planned Windows file server auditing tool for reviewing folder permissions and risky access patterns.
+
+## Publisher
+
+VTech App publishes no-account, practical system utilities. Public contact email: vtechinf1@gmail.com.

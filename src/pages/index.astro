@@ -4,11 +4,49 @@ import AppCard from '../components/AppCard.astro';
 import apps from '../data/apps.json';
 
 const windowsApps = apps.filter((app) => app.platform === 'Windows');
+const siteUrl = 'https://vtech-app.com';
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': `${siteUrl}/#organization`,
+			name: 'VTech App',
+			url: siteUrl,
+			logo: `${siteUrl}/brand/vtech-logo.png`,
+			email: 'vtechinf1@gmail.com',
+			sameAs: [
+				'https://github.com/vardanchikb/vtechapp',
+				'https://ko-fi.com/vtechapp',
+			],
+		},
+		{
+			'@type': 'WebSite',
+			'@id': `${siteUrl}/#website`,
+			name: 'VTech App',
+			url: siteUrl,
+			publisher: { '@id': `${siteUrl}/#organization` },
+			description: 'Independent free software utilities for Windows users, technicians, and system administrators.',
+		},
+		{
+			'@type': 'ItemList',
+			name: 'VTech App Windows Utilities',
+			itemListElement: windowsApps.map((app, index) => ({
+				'@type': 'ListItem',
+				position: index + 1,
+				url: `${siteUrl}/apps/${app.slug}/`,
+				name: app.name,
+				description: app.shortDescription,
+			})),
+		},
+	],
+};
 ---
 
 <Layout
 	title="VTech App | Practical Windows Utilities"
 	description="VTech App builds focused tools for storage analysis, permission-safe file operations, and file-server auditing."
+	structuredData={structuredData}
 >
 	<section class="hero home-hero">
 		<div class="hero-copy">

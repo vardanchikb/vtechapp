@@ -13,11 +13,37 @@ export function getStaticPaths() {
 const { app } = Astro.props;
 const hasSource = Boolean(app.sourceUrl);
 const hasDownload = Boolean(app.downloadUrl);
+const siteUrl = 'https://vtech-app.com';
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareApplication',
+	name: app.name,
+	description: app.longDescription,
+	url: `${siteUrl}/apps/${app.slug}/`,
+	applicationCategory: 'UtilitiesApplication',
+	operatingSystem: app.platform,
+	softwareVersion: app.currentVersion,
+	keywords: app.tags.join(', '),
+	publisher: {
+		'@type': 'Organization',
+		name: 'VTech App',
+		url: siteUrl,
+		logo: `${siteUrl}/brand/vtech-logo.png`,
+	},
+	offers: {
+		'@type': 'Offer',
+		price: '0',
+		priceCurrency: 'USD',
+		availability: hasDownload ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
+		url: hasDownload ? app.downloadUrl : `${siteUrl}/apps/${app.slug}/`,
+	},
+};
 ---
 
 <Layout
 	title={`${app.name} | VTech App`}
 	description={app.shortDescription}
+	structuredData={structuredData}
 >
 	<article class="detail-shell">
 		<header class="hero">

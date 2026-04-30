@@ -21,6 +21,25 @@ npm run build
 
 Astro writes the production build to `dist`.
 
+## Contact Form Email
+
+The contact API sends email through Resend and requires a `RESEND_API_KEY` secret.
+
+For local Cloudflare development, create `.dev.vars` from the example file and set the real key:
+
+```bash
+cp .dev.vars.example .dev.vars
+```
+
+For Cloudflare Pages dashboard deploys, add `RESEND_API_KEY` in the Pages project settings under production environment variables.
+
+For direct Worker deploys with the generated Wrangler config, set the secret after building:
+
+```bash
+npm run build
+npx wrangler secret put RESEND_API_KEY --config wrangler.deploy.json
+```
+
 ## Cloudflare Pages
 
 Use these deployment settings:
