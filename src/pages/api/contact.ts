@@ -1,18 +1,9 @@
-// Cloudflare Pages Function — sends contact form submissions via Resend.
-//
-// Required setup in Cloudflare Pages dashboard:
-//   Settings → Environment variables → Add variable:
-//     Name:  RESEND_API_KEY
-//     Value: your Resend API key
-//     Environment: Production (and Preview if desired)
-//
-// Required in Resend dashboard (one-time):
-//   Domains → Add domain → vtech-app.com
-//   Add the DNS records shown (TXT + DKIM) in your Cloudflare DNS panel.
-//   Once verified, emails will send from contact@vtech-app.com.
+import type { APIRoute } from 'astro';
 
-export async function onRequestPost(context) {
-	const { request, env } = context;
+export const prerender = false;
+
+export const POST: APIRoute = async ({ request, locals }) => {
+	const env = (locals as Record<string, any>).runtime?.env ?? {};
 
 	// --- Parse ---
 	let name = '', email = '', appName = '', feedbackType = '', message = '';
@@ -42,7 +33,7 @@ export async function onRequestPost(context) {
 	}
 
 	// --- Check key ---
-	const apiKey = env.RESEND_API_KEY;
+	const apiKey = (env.RESEND_API_KEY ?? '') as string;
 	if (!apiKey) {
 		return Response.json(
 			{ ok: false, error: 'Email service is not configured.' },
@@ -63,7 +54,7 @@ export async function onRequestPost(context) {
 	].join('\n');
 
 	// --- Send via Resend ---
-	let resendRes;
+	let resendRes: Response;
 	try {
 		resendRes = await fetch('https://api.resend.com/emails', {
 			method: 'POST',
@@ -94,4 +85,4 @@ export async function onRequestPost(context) {
 	}
 
 	return Response.json({ ok: true });
-}
+};

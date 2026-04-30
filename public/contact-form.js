@@ -14,8 +14,15 @@ if (form) {
 			// Primary: Resend via Pages Function
 			const res = await fetch('/api/contact', {
 				method: 'POST',
+				headers: { Accept: 'application/json' },
 				body: new FormData(form),
 			});
+
+			const contentType = res.headers.get('content-type') ?? '';
+			if (!contentType.includes('application/json')) {
+				throw new Error('Server error — please email us directly at contact@vtech-app.com');
+			}
+
 			const data = await res.json();
 
 			if (data.ok) {
