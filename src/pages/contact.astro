@@ -19,12 +19,7 @@ const contactEmail = 'contact@vtech-app.com';
 	</header>
 
 	<section class="contact-grid">
-		<form id="contact-form" class="form-card" action="https://api.web3forms.com/submit" method="post" novalidate>
-			<input type="hidden" name="access_key" value="528f82b8-dea6-429f-8e6d-f663c1e41d19" />
-			<input type="hidden" name="from_name" value="VTech App Contact Form" />
-			<input type="hidden" name="subject" value="VTech App — Contact Form Submission" />
-			<input type="checkbox" name="botcheck" style="display:none" />
-
+		<form id="contact-form" class="form-card" action="/api/contact" method="post">
 			<div>
 				<h2>Feedback form</h2>
 				<p>Fill in the form and your message is sent directly to VTech App.</p>
