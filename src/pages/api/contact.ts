@@ -1,10 +1,9 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request, locals }) => {
-	const env = (locals as Record<string, any>).runtime?.env ?? {};
-
+export const POST: APIRoute = async ({ request }) => {
 	// --- Parse ---
 	let name = '', email = '', appName = '', feedbackType = '', message = '';
 	try {
@@ -33,7 +32,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 	}
 
 	// --- Check key ---
-	const apiKey = (env.RESEND_API_KEY ?? '') as string;
+	const apiKey = (env as unknown as Record<string, string | undefined>).RESEND_API_KEY ?? '';
 	if (!apiKey) {
 		return Response.json(
 			{ ok: false, error: 'Email service is not configured.' },
