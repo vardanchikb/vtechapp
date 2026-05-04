@@ -13,6 +13,8 @@ export function getStaticPaths() {
 const { app } = Astro.props;
 const hasSource = Boolean(app.sourceUrl);
 const hasDownload = Boolean(app.downloadUrl);
+const isGitHub = hasSource && app.sourceUrl.includes('github.com');
+const cloneUrl = isGitHub ? app.sourceUrl + '.git' : null;
 const screenshots = (app.screenshots ?? []).map((screenshot) => (
 	typeof screenshot === 'string'
 		? { src: screenshot, alt: `${app.name} screenshot`, caption: '' }
@@ -58,8 +60,8 @@ const structuredData = {
 				<p>{app.shortDescription}</p>
 				<div class="hero-actions">
 					<span class="status">{app.status}</span>
-					{hasDownload ? <a class="button primary" href={app.downloadUrl}>Download</a> : null}
-					{hasSource ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a> : null}
+					{hasDownload ? <a class="button primary" href={app.downloadUrl}>{isGitHub ? 'Download ZIP' : 'Download'}</a> : null}
+					{isGitHub ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a> : hasSource ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a> : null}
 					<a class="button primary" href={app.donationUrl} rel="noopener noreferrer">Donate</a>
 					<a class="button" href={`mailto:${app.supportEmail}`}>Contact support</a>
 				</div>
@@ -74,11 +76,12 @@ const structuredData = {
 				</div>
 				{
 					hasDownload ? (
-						<a class="button primary" href={app.downloadUrl}>Download</a>
+						<a class="button primary" href={app.downloadUrl}>{isGitHub ? 'Download ZIP' : 'Download'}</a>
 					) : (
 						<span class="button disabled" aria-disabled="true">Download Coming Soon</span>
 					)
 				}
+				{isGitHub ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a> : null}
 			</aside>
 		</header>
 
@@ -93,8 +96,10 @@ const structuredData = {
 			<div class="card">
 				<h2>Release status</h2>
 				{
-					hasDownload && hasSource ? (
-						<p>This app is available from its GitHub source archive and public repository.</p>
+					hasDownload && isGitHub ? (
+						<p>This app is distributed via its public GitHub repository. Clone or download the ZIP — no compiled binary is needed.</p>
+					) : hasDownload && hasSource ? (
+						<p>This app is available from its public source repository and official download link.</p>
 					) : hasDownload ? (
 						<p>This app is available from the official VTech App download link.</p>
 					) : (
@@ -154,9 +159,18 @@ const structuredData = {
 				</ul>
 			</div>
 			<div class="card">
-				<h2>Source URL</h2>
+				<h2>{isGitHub ? 'GitHub repository' : 'Source URL'}</h2>
 				{
-					hasSource ? (
+					isGitHub ? (
+						<div class="github-section">
+							<p>Clone with Git:</p>
+							<pre class="clone-command"><code>git clone {cloneUrl}</code></pre>
+							<div class="github-actions">
+								<a class="button primary" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a>
+								{hasDownload ? <a class="button" href={app.downloadUrl}>Download ZIP</a> : null}
+							</div>
+						</div>
+					) : hasSource ? (
 						<a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a>
 					) : (
 						<p class="meta">No public source URL is available yet.</p>

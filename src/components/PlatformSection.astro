@@ -12,14 +12,15 @@ interface App {
 	tags: string[];
 }
 
-const { title, description, apps = [] } = Astro.props as {
+const { title, description, apps = [], id } = Astro.props as {
 	title: string;
 	description: string;
 	apps?: App[];
+	id?: string;
 };
 ---
 
-<section>
+<section id={id}>
 	<div class="section-heading">
 		<div>
 			<p class="eyebrow">Platform</p>
@@ -36,8 +37,8 @@ const { title, description, apps = [] } = Astro.props as {
 			<div class="empty-state">
 				<AppIcon slug="linux-planned" />
 				<div>
-					<h2>Linux Apps Coming Soon</h2>
-					<p>Linux utilities are planned for future releases. No Linux downloads are available yet.</p>
+					<h2>Apps coming soon</h2>
+					<p>No apps are listed in this category yet. Check back for future releases.</p>
 				</div>
 			</div>
 		)

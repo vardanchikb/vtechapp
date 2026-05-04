@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import apps from '../data/apps.json';
 
 const windowsApps = apps.filter((app) => app.platform === 'Windows');
+const linuxApps = apps.filter((app) => app.platform === 'Linux');
 ---
 
 <Layout
@@ -55,18 +56,59 @@ const windowsApps = apps.filter((app) => app.platform === 'Windows');
 		</div>
 	</section>
 
+	<section>
+		<div class="section-heading">
+			<div>
+				<h2>Linux utilities</h2>
+				<p>Release status for the current Linux utility catalog.</p>
+			</div>
+		</div>
+		<div class="release-table" aria-label="Linux app release status">
+			<div class="release-table-head">
+				<span>App</span>
+				<span>Platform</span>
+				<span>Version</span>
+				<span>Status</span>
+				<span>Action</span>
+			</div>
+			{linuxApps.map((app) => (
+				<article class="release-row">
+					<div>
+						<h3>{app.name}</h3>
+						<p>{app.shortDescription}</p>
+					</div>
+					<span>{app.platform}</span>
+					<span>{app.currentVersion}</span>
+					<span class="status">{app.status}</span>
+					<div class="actions">
+						{app.downloadUrl ? (
+							<a class="button primary" href={app.downloadUrl}>Download ZIP</a>
+						) : (
+							<span class="button disabled" aria-disabled="true">Coming Soon</span>
+						)}
+						{app.sourceUrl ? (
+							<a class="button" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a>
+						) : null}
+						<a class="button" href={`/apps/${app.slug}/`}>Details</a>
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
+
 	<section class="two-column">
-		<article class="notice">
-			<h2>Linux Apps Coming Soon</h2>
-			<p>
-				Linux utilities are planned for future releases. No Linux downloads are available yet.
-			</p>
-		</article>
 		<article class="notice">
 			<h2>Download safety</h2>
 			<p>
 				Official releases include site-hosted links, version status, changelog entries, and
 				checksums when release files are published.
+			</p>
+		</article>
+		<article class="notice">
+			<h2>Linux apps from GitHub</h2>
+			<p>
+				Linux utilities are distributed via public GitHub repositories. Download the ZIP or clone
+				the repo — instructions are on each app's detail page.
 			</p>
 		</article>
 	</section>

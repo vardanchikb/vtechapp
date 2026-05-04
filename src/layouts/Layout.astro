@@ -32,8 +32,9 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/png" href="/brand/vtech-logo.png" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
@@ -1165,5 +1166,41 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 			align-items: flex-start;
 			flex-direction: column;
 		}
+	}
+
+	.github-section {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.github-section p {
+		margin-bottom: 0;
+		color: var(--muted);
+		font-size: 0.9rem;
+	}
+
+	.clone-command {
+		margin: 0;
+		padding: 0.75rem 1rem;
+		border: 1px solid var(--border-strong);
+		border-radius: var(--radius-sm);
+		background: rgba(0, 0, 0, 0.35);
+		overflow-x: auto;
+		font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+		font-size: 0.88rem;
+		color: var(--accent);
+		white-space: nowrap;
+	}
+
+	.clone-command code {
+		background: none;
+		padding: 0;
+	}
+
+	.github-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
 	}
 </style>
