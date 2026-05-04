@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+	<title id="title">Jackery Monitor dashboard screenshot</title>
+	<desc id="desc">Dark blue dashboard showing Jackery device controls, a battery chart, charging overlays, and battery drop events.</desc>
+	<defs>
+		<linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+			<stop offset="0" stop-color="#071326"/>
+			<stop offset="1" stop-color="#12294f"/>
+		</linearGradient>
+		<filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+			<feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020712" flood-opacity="0.28"/>
+		</filter>
+	</defs>
+	<rect width="1280" height="760" fill="url(#bg)"/>
+	<g fill="none" stroke="#2d5f9f" stroke-width="1">
+		<path d="M0 72h1280M0 144h1280M0 216h1280M0 288h1280M0 360h1280M0 432h1280M0 504h1280M0 576h1280M0 648h1280"/>
+		<path d="M96 0v760M224 0v760M352 0v760M480 0v760M608 0v760M736 0v760M864 0v760M992 0v760M1120 0v760"/>
+	</g>
+	<g filter="url(#shadow)">
+		<rect x="28" y="32" width="1224" height="148" rx="14" fill="#101c31" stroke="#315b98"/>
+		<text x="48" y="72" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">Available Devices</text>
+		<text x="48" y="101" fill="#b7d4ff" font-family="Segoe UI, Arial, sans-serif" font-size="14">When Jackery reports a new bound device, it will show up here. Add it to the dashboard when you want it monitored.</text>
+		<rect x="48" y="120" width="380" height="44" rx="8" fill="#10294b" stroke="#477cc6" stroke-dasharray="3 4"/>
+		<text x="62" y="148" fill="#b7d4ff" font-family="Segoe UI, Arial, sans-serif" font-size="16">No hidden or newly discovered devices right now.</text>
+
+		<rect x="28" y="198" width="1224" height="478" rx="14" fill="#101c31" stroke="#315b98"/>
+		<text x="48" y="238" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">Explorer 2000Plus Old</text>
+		<text x="48" y="262" fill="#93c6ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">398043891275661312</text>
+		<text x="48" y="281" fill="#b7d4ff" font-family="Segoe UI, Arial, sans-serif" font-size="14">Kasa automation enabled. Min charge starts at 30.0%.</text>
+		<rect x="48" y="300" width="135" height="40" rx="8" fill="#137138" stroke="#27b96b"/>
+		<text x="76" y="325" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Start Charging</text>
+		<rect x="194" y="300" width="166" height="40" rx="8" fill="#9b4f05" stroke="#e48214"/>
+		<text x="224" y="325" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Emergency Charge</text>
+		<rect x="370" y="300" width="136" height="40" rx="8" fill="#7f2622" stroke="#c44e48"/>
+		<text x="403" y="325" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Stop Charging</text>
+		<rect x="1143" y="216" width="86" height="40" rx="8" fill="#602a44" stroke="#bb5e86"/>
+		<text x="1162" y="241" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Remove</text>
+		<rect x="48" y="372" width="1180" height="36" rx="7" fill="#0d2442" stroke="#294d83"/>
+		<text x="64" y="396" fill="#cce0ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">May 3, 11:57 PM</text>
+		<text x="190" y="396" fill="#cce0ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">Battery: 49.0%</text>
+		<circle cx="300" cy="391" r="5" fill="#ff4d58"/>
+		<text x="312" y="396" fill="#cce0ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">Plug: OFF</text>
+		<text x="420" y="396" fill="#cce0ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">after_deadline_waiting_for_next_morning(deadline=16:00,next_start=10:00)</text>
+
+		<rect x="48" y="446" width="1180" height="202" rx="7" fill="#0f1c32" stroke="#294d83"/>
+		<g stroke="#33496c" stroke-width="1">
+			<path d="M90 614h1040M90 578h1040M90 542h1040M90 506h1040M90 470h1040"/>
+			<path d="M160 466v160M260 466v160M360 466v160M460 466v160M560 466v160M660 466v160M760 466v160M860 466v160M960 466v160M1060 466v160"/>
+		</g>
+		<path d="M90 530 L160 552 L210 590 L250 556 L300 486 L360 474 L430 476 L520 510 L610 548 L690 590 L740 536 L815 575 L875 496 L920 474 L960 512 L990 496 L1040 512 L1130 560" fill="none" stroke="#67d7ff" stroke-width="3"/>
+		<path d="M90 592 L190 590 L280 590 L360 590 L430 591 L520 592 L610 590 L690 590 L780 591 L870 590 L960 589 L1040 590 L1130 590" fill="none" stroke="#ff5963" stroke-width="3"/>
+		<path d="M160 612 L160 468 L170 470 L170 612 M250 612 L250 468 L260 470 L260 612 M350 612 L350 468 L410 468 L410 612 M725 612 L725 468 L735 470 L735 612 M825 612 L825 468 L895 468 L895 612 M978 612 L978 468 L1010 468 L1010 612" fill="rgba(47,210,113,0.28)" stroke="#40e37f" stroke-width="2"/>
+		<path d="M90 530 L190 530 L290 529 L360 506 L430 505 L520 509 L620 530 L750 528 L875 512 L960 511 L1040 522 L1130 530" fill="none" stroke="#ff8e22" stroke-width="2"/>
+		<path d="M360 590 L360 490 L370 585 L380 535 L390 575 L400 540 L410 570 L420 545 L430 586" fill="none" stroke="#ffd141" stroke-width="3"/>
+		<g font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#dceaff">
+			<text x="70" y="470">100</text><text x="77" y="614">0</text><text x="56" y="548" transform="rotate(-90 56 548)">Battery %</text>
+			<text x="1142" y="470">600</text><text x="1142" y="614">0</text><text x="1166" y="548" transform="rotate(90 1166 548)">Power (W)</text>
+			<text x="1200" y="492" fill="#ff8e22">60</text><text x="1200" y="614" fill="#ff8e22">0</text><text x="1218" y="548" fill="#ff8e22" transform="rotate(90 1218 548)">Temp (C)</text>
+		</g>
+		<g font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#dceaff">
+			<rect x="358" y="458" width="40" height="12" fill="none" stroke="#67d7ff" stroke-width="2"/><text x="406" y="469">Battery %</text>
+			<rect x="466" y="458" width="40" height="12" fill="none" stroke="#ff5963" stroke-width="2"/><text x="514" y="469">Consumption (W)</text>
+			<rect x="620" y="458" width="40" height="12" fill="none" stroke="#40e37f" stroke-width="2"/><text x="668" y="469">Charging Rate (W)</text>
+			<rect x="774" y="458" width="40" height="12" fill="none" stroke="#ff8e22" stroke-width="2"/><text x="822" y="469">Temperature (C)</text>
+		</g>
+
+		<rect x="28" y="688" width="1224" height="52" rx="14" fill="#101c31" stroke="#315b98"/>
+		<text x="48" y="720" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">Battery Drop Events</text>
+		<text x="318" y="720" fill="#b7d4ff" font-family="Segoe UI, Arial, sans-serif" font-size="14">No battery drop events in the selected interval.</text>
+	</g>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1098" height="617" viewBox="0 0 1098 617" role="img" aria-labelledby="title desc">
+	<title id="title">Jackery Monitor configuration screenshot</title>
+	<desc id="desc">Dark blue configuration page with Jackery account settings and per-device monitor settings.</desc>
+	<defs>
+		<linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+			<stop offset="0" stop-color="#071326"/>
+			<stop offset="1" stop-color="#12294f"/>
+		</linearGradient>
+		<filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+			<feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020712" flood-opacity="0.28"/>
+		</filter>
+	</defs>
+	<rect width="1098" height="617" fill="url(#bg)"/>
+	<g fill="none" stroke="#2d5f9f" stroke-width="1" opacity="0.55">
+		<path d="M0 72h1098M0 144h1098M0 216h1098M0 288h1098M0 360h1098M0 432h1098M0 504h1098M0 576h1098"/>
+		<path d="M96 0v617M224 0v617M352 0v617M480 0v617M608 0v617M736 0v617M864 0v617M992 0v617"/>
+	</g>
+	<g filter="url(#shadow)" font-family="Segoe UI, Arial, sans-serif">
+		<rect x="18" y="20" width="980" height="110" rx="14" fill="#101c31" stroke="#315b98"/>
+		<text x="31" y="56" fill="#ffffff" font-size="21" font-weight="700">Explorer 2000Plus Fleet Config</text>
+		<text x="31" y="83" fill="#b7d4ff" font-size="13">Runtime configuration. Device settings take effect on the next monitor loop. Account credentials are written to</text>
+		<rect x="668" y="69" width="38" height="18" rx="4" fill="#0d2442" stroke="#477cc6"/>
+		<text x="674" y="83" fill="#cce0ff" font-size="12">.env</text>
+		<text x="711" y="83" fill="#b7d4ff" font-size="13">immediately.</text>
+
+		<rect x="18" y="144" width="980" height="186" rx="14" fill="#101c31" stroke="#315b98"/>
+		<text x="31" y="181" fill="#ffffff" font-size="21" font-weight="700">Jackery Account</text>
+		<text x="31" y="210" fill="#b7d4ff" font-size="13">Email and password for the Jackery cloud API. Leave password blank to keep the current value.</text>
+		<text x="580" y="210" fill="#ffffff" font-size="13" font-weight="700">Region / country</text>
+		<text x="692" y="210" fill="#b7d4ff" font-size="13">is handled automatically by the global endpoint.</text>
+		<rect x="31" y="237" width="950" height="78" rx="9" fill="#102344" stroke="#477cc6"/>
+		<text x="44" y="263" fill="#b7d4ff" font-size="12">Email</text>
+		<rect x="44" y="266" width="416" height="37" rx="7" fill="#082142" stroke="#f7e5b4" stroke-width="1.4"/>
+		<text x="58" y="290" fill="#ffffff" font-size="14" font-weight="700">youremail@gmail.com</text>
+		<text x="472" y="263" fill="#b7d4ff" font-size="12">Password</text>
+		<rect x="472" y="266" width="416" height="37" rx="7" fill="#102f5a" stroke="#477cc6"/>
+		<text x="486" y="290" fill="#8ca8cf" font-size="13">leave blank to keep current</text>
+		<rect x="901" y="262" width="67" height="41" rx="9" fill="#137138" stroke="#27b96b"/>
+		<text x="921" y="288" fill="#ffffff" font-size="14" font-weight="700">Save</text>
+
+		<rect x="18" y="344" width="980" height="141" rx="14" fill="#101c31" stroke="#315b98"/>
+		<text x="31" y="381" fill="#ffffff" font-size="21" font-weight="700">Per-Device Settings</text>
+		<rect x="31" y="393" width="950" height="77" rx="8" fill="#102344" stroke="#477cc6"/>
+		<text x="44" y="431" fill="#ffffff" font-size="16">Explorer 2000Plus Old</text>
+		<text x="44" y="449" fill="#93c6ff" font-size="12">398043891275661312</text>
+		<text x="326" y="418" fill="#b7d4ff" font-size="12">Min charge start percent</text>
+		<rect x="326" y="422" width="225" height="35" rx="7" fill="#102f5a" stroke="#477cc6"/>
+		<text x="340" y="445" fill="#ffffff" font-size="14">30</text>
+		<text x="564" y="418" fill="#b7d4ff" font-size="12">Screen timeout</text>
+		<rect x="564" y="432" width="92" height="18" rx="2" fill="#ffffff"/>
+		<text x="569" y="446" fill="#000000" font-size="13">Forever</text>
+		<path d="M642 438l5 6 5-6z" fill="#000000"/>
+		<rect x="801" y="411" width="67" height="40" rx="9" fill="#137138" stroke="#27b96b"/>
+		<text x="821" y="436" fill="#ffffff" font-size="14" font-weight="700">Save</text>
+		<rect x="880" y="411" width="88" height="40" rx="9" fill="#123d70" stroke="#477cc6"/>
+		<text x="906" y="436" fill="#ffffff" font-size="14" font-weight="700">Remove</text>
+	</g>
+</svg>

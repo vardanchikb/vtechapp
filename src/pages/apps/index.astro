@@ -9,14 +9,14 @@ const linuxApps = apps.filter((app) => app.platform === 'Linux');
 
 <Layout
 	title="Apps | VTech App"
-	description="Browse VTech App software utilities by platform. Windows utilities are coming soon and Linux utilities are planned."
+	description="Browse VTech App software utilities by platform. Windows and Linux utilities are published as practical tools for real system work."
 >
 	<header class="page-heading">
 		<p class="eyebrow">Software catalog</p>
 		<h1>Practical utilities by platform.</h1>
 		<p>
-			VTech App is building a focused catalog of practical utilities for system work. Windows
-			apps are in development, and Linux apps are planned.
+			VTech App is building a focused catalog of practical utilities for system work across
+			Windows and Linux.
 		</p>
 	</header>
 
@@ -28,7 +28,7 @@ const linuxApps = apps.filter((app) => app.platform === 'Linux');
 
 	<PlatformSection
 		title="Linux Apps"
-		description="Linux utilities are planned for future releases."
+		description="Self-hosted Linux utilities for monitoring, automation, and system workflows."
 		apps={linuxApps}
 	/>
 </Layout>

@@ -876,6 +876,24 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		background: var(--surface-3);
 	}
 
+	.screenshot-card {
+		display: grid;
+		gap: 0.72rem;
+		margin: 0;
+	}
+
+	.screenshot-card img {
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		object-position: top left;
+		box-shadow: var(--shadow-card);
+	}
+
+	.screenshot-card figcaption {
+		color: var(--muted);
+		font-size: 0.9rem;
+	}
+
 	.preview-card {
 		min-height: 220px;
 		padding: 1.1rem;

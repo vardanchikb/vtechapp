@@ -13,6 +13,11 @@ export function getStaticPaths() {
 const { app } = Astro.props;
 const hasSource = Boolean(app.sourceUrl);
 const hasDownload = Boolean(app.downloadUrl);
+const screenshots = (app.screenshots ?? []).map((screenshot) => (
+	typeof screenshot === 'string'
+		? { src: screenshot, alt: `${app.name} screenshot`, caption: '' }
+		: screenshot
+));
 const siteUrl = 'https://vtech-app.com';
 const structuredData = {
 	'@context': 'https://schema.org',
@@ -54,6 +59,7 @@ const structuredData = {
 				<div class="hero-actions">
 					<span class="status">{app.status}</span>
 					{hasDownload ? <a class="button primary" href={app.downloadUrl}>Download</a> : null}
+					{hasSource ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a> : null}
 					<a class="button primary" href={app.donationUrl} rel="noopener noreferrer">Donate</a>
 					<a class="button" href={`mailto:${app.supportEmail}`}>Contact support</a>
 				</div>
@@ -87,7 +93,9 @@ const structuredData = {
 			<div class="card">
 				<h2>Release status</h2>
 				{
-					hasDownload ? (
+					hasDownload && hasSource ? (
+						<p>This app is available from its GitHub source archive and public repository.</p>
+					) : hasDownload ? (
 						<p>This app is available from the official VTech App download link.</p>
 					) : (
 						<p>
@@ -104,21 +112,38 @@ const structuredData = {
 				<div>
 					<p class="eyebrow">Preview</p>
 					<h2>Workflow preview</h2>
-					<p>Abstract interface previews show the type of workflow this utility is designed for.</p>
+					<p>
+						{screenshots.length > 0
+							? 'Screenshots show the current app workflow and interface.'
+							: 'Abstract interface previews show the type of workflow this utility is designed for.'}
+					</p>
 				</div>
 			</div>
-			<div class="gallery preview-gallery">
-				<article class="preview-card">
-					<div class="preview-lines" aria-hidden="true"><span></span><span></span><span></span></div>
-					<h3>Analyze</h3>
-					<p>Review the relevant file, folder, storage, or permission data clearly.</p>
-				</article>
-				<article class="preview-card">
-					<div class="preview-nodes" aria-hidden="true"><span></span><span></span><span></span></div>
-					<h3>Act</h3>
-					<p>Use focused utility workflows for practical administration tasks.</p>
-				</article>
-			</div>
+			{
+				screenshots.length > 0 ? (
+					<div class="gallery screenshot-gallery">
+						{screenshots.map((screenshot) => (
+							<figure class="screenshot-card">
+								<img src={screenshot.src} alt={screenshot.alt} loading="lazy" />
+								{screenshot.caption ? <figcaption>{screenshot.caption}</figcaption> : null}
+							</figure>
+						))}
+					</div>
+				) : (
+					<div class="gallery preview-gallery">
+						<article class="preview-card">
+							<div class="preview-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+							<h3>Analyze</h3>
+							<p>Review the relevant file, folder, storage, or permission data clearly.</p>
+						</article>
+						<article class="preview-card">
+							<div class="preview-nodes" aria-hidden="true"><span></span><span></span><span></span></div>
+							<h3>Act</h3>
+							<p>Use focused utility workflows for practical administration tasks.</p>
+						</article>
+					</div>
+				)
+			}
 		</section>
 
 		<section class="two-column">

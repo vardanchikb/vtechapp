@@ -18,6 +18,38 @@
     "tags": ["Windows", "storage", "disk usage", "folder size", "cleanup", "system utility", "sysadmin"]
   },
   {
+    "name": "Jackery Monitor",
+    "slug": "jackery-monitor",
+    "platform": "Linux",
+    "status": "Available",
+    "shortDescription": "A self-hosted Linux monitor for Jackery portable power stations with charts, Kasa smart-plug charging automation, and a local web dashboard.",
+    "longDescription": "Jackery Monitor is an unofficial self-hosted utility for Jackery portable power stations. It polls the Jackery cloud API, logs readings to CSV or MySQL, controls TP-Link Kasa smart plugs for automated charging, keeps supported device displays awake, and serves a local web dashboard with charts, device controls, configuration, and HTTP API endpoints for home automation.",
+    "currentVersion": "Initial public release",
+    "releaseDate": "Available now",
+    "icon": "",
+    "screenshots": [
+      {
+        "src": "/screenshots/jackery-monitor-dashboard.svg",
+        "alt": "Jackery Monitor dashboard with battery chart, charging controls, device status, and battery drop events.",
+        "caption": "Dashboard with live device state, charge controls, chart history, and charging overlays."
+      },
+      {
+        "src": "/screenshots/jackery-monitor-config.svg",
+        "alt": "Jackery Monitor configuration page with Jackery account settings and per-device options.",
+        "caption": "Runtime configuration for Jackery account credentials, charge thresholds, and screen timeout."
+      }
+    ],
+    "downloadUrl": "https://github.com/vardanchikb/jackerychrg/archive/refs/heads/main.zip",
+    "donationUrl": "https://ko-fi.com/vtechapp",
+    "sourceUrl": "https://github.com/vardanchikb/jackerychrg",
+    "changelog": [
+      "Initial Linux release is available from the public GitHub repository.",
+      "Includes systemd services, web dashboard, Kasa charging automation, MySQL chart storage, and HTTP API endpoints."
+    ],
+    "supportEmail": "vtechinf1@gmail.com",
+    "tags": ["Linux", "Jackery", "battery monitor", "solar generator", "Kasa", "systemd", "home automation"]
+  },
+  {
     "name": "Permission Preserving File Copier",
     "slug": "permission-preserving-file-copier",
     "platform": "Windows",
