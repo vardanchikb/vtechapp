@@ -1,0 +1,2 @@
+FolderMover.exe
+SHA256: 44297a08f30776ace5736fc1d483ebcd8c533a8719fbe7e4255e05f83021db2e

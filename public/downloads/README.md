@@ -9,6 +9,7 @@ Releases or Cloudflare R2 instead.
 ## Current Windows Apps
 
 - `windows/folder-size-explorer/`
+- `windows/folder-mover/`
 - `windows/permission-preserving-file-copier/`
 - `windows/windows-file-server-permission-auditor/`
 

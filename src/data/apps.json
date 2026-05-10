@@ -18,6 +18,47 @@
     "tags": ["Windows", "storage", "disk usage", "folder size", "cleanup", "system utility", "sysadmin"]
   },
   {
+    "name": "Folder Mover",
+    "slug": "folder-mover",
+    "platform": "Windows",
+    "status": "Available",
+    "shortDescription": "A fast Windows copy and move utility for large folder jobs, network shares, and NTFS permission-aware migrations.",
+    "longDescription": "Folder Mover helps Windows users, technicians, and domain administrators move or copy large folder trees with resumable sessions, detailed logging, and NTFS permission handling. It is designed for practical file server and workstation migration work where Windows Explorer can be slow, fragile, or unclear about what failed.",
+    "currentVersion": "v1.0.0",
+    "releaseDate": "May 9, 2026",
+    "icon": "",
+    "screenshots": [
+      {
+        "src": "/screenshots/folder-mover-success.png",
+        "alt": "Folder Mover showing a completed move operation with 52,008 files moved and 8.88 GB processed.",
+        "caption": "Completed high-volume move with 52,008 files, 225 folders, and 8.88 GB processed."
+      },
+      {
+        "src": "/screenshots/folder-mover-network-resume.png",
+        "alt": "Folder Mover showing a network unavailable warning with the session saved for resume.",
+        "caption": "Fault-tolerant network handling saves the session so the job can resume after reconnecting."
+      }
+    ],
+    "downloadUrl": "https://github.com/vardanchikb/vtechapp/releases/download/folder-mover-v1.0.0/FolderMover.exe",
+    "checksumUrl": "/downloads/windows/folder-mover/checksums.txt",
+    "donationUrl": "https://ko-fi.com/vtechapp",
+    "sourceUrl": "",
+    "features": [
+      "Copy or move folders while keeping source data intact until operations finish safely.",
+      "Resume interrupted sessions after network share failures or disconnected destinations.",
+      "Preserve NTFS permissions with options for none, protected source-only permissions, or inherited merges.",
+      "Use multithreaded file operations for large folder trees and network migrations.",
+      "Record detailed progress, error logs, file counts, moved data size, and operation duration.",
+      "Choose practical overwrite behavior for existing files during repeat or recovery runs."
+    ],
+    "changelog": [
+      "Initial public Windows release is available as a GitHub Release download.",
+      "Includes copy and move modes, NTFS permission options, resumable sessions, multithreaded operation, and detailed error logs."
+    ],
+    "supportEmail": "vtechinf1@gmail.com",
+    "tags": ["Windows", "folder move", "file copy", "NTFS permissions", "network shares", "migration", "sysadmin"]
+  },
+  {
     "name": "Jackery Monitor",
     "slug": "jackery-monitor",
     "platform": "Linux",
@@ -48,24 +89,6 @@
     ],
     "supportEmail": "vtechinf1@gmail.com",
     "tags": ["Linux", "Jackery", "battery monitor", "solar generator", "Kasa", "systemd", "home automation"]
-  },
-  {
-    "name": "Permission Preserving File Copier",
-    "slug": "permission-preserving-file-copier",
-    "platform": "Windows",
-    "status": "Coming Soon",
-    "shortDescription": "A Windows file and folder copy tool designed to preserve permissions while using multithreaded copy operations.",
-    "longDescription": "Permission Preserving File Copier is intended for safer Windows file migrations, backups, and administrative copy jobs. It will focus on copying files and folders while preserving NTFS permissions and improving performance with multithreaded copy capability.",
-    "currentVersion": "Coming Soon",
-    "releaseDate": "Coming Soon",
-    "icon": "",
-    "screenshots": [],
-    "downloadUrl": "",
-    "donationUrl": "https://ko-fi.com/vtechapp",
-    "sourceUrl": "",
-    "changelog": ["Initial public release is in development."],
-    "supportEmail": "vtechinf1@gmail.com",
-    "tags": ["Windows", "file copy", "NTFS permissions", "migration", "backup", "multithreaded", "sysadmin"]
   },
   {
     "name": "Windows File Server Permission Auditor",

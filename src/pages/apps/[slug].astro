@@ -14,7 +14,10 @@ const { app } = Astro.props;
 const hasSource = Boolean(app.sourceUrl);
 const hasDownload = Boolean(app.downloadUrl);
 const isGitHub = hasSource && app.sourceUrl.includes('github.com');
+const isGitHubRelease = hasDownload && app.downloadUrl.includes('github.com') && app.downloadUrl.includes('/releases/');
 const cloneUrl = isGitHub ? app.sourceUrl + '.git' : null;
+const features = app.features ?? [];
+const hasChecksum = Boolean(app.checksumUrl);
 const screenshots = (app.screenshots ?? []).map((screenshot) => (
 	typeof screenshot === 'string'
 		? { src: screenshot, alt: `${app.name} screenshot`, caption: '' }
@@ -61,6 +64,7 @@ const structuredData = {
 				<div class="hero-actions">
 					<span class="status">{app.status}</span>
 					{hasDownload ? <a class="button primary" href={app.downloadUrl}>{isGitHub ? 'Download ZIP' : 'Download'}</a> : null}
+					{hasChecksum ? <a class="button" href={app.checksumUrl}>Checksum</a> : null}
 					{isGitHub ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a> : hasSource ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a> : null}
 					<a class="button primary" href={app.donationUrl} rel="noopener noreferrer">Donate</a>
 					<a class="button" href={`mailto:${app.supportEmail}`}>Contact support</a>
@@ -82,6 +86,7 @@ const structuredData = {
 					)
 				}
 				{isGitHub ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a> : null}
+				{hasChecksum ? <a class="button" href={app.checksumUrl}>View checksum</a> : null}
 			</aside>
 		</header>
 
@@ -98,6 +103,8 @@ const structuredData = {
 				{
 					hasDownload && isGitHub ? (
 						<p>This app is distributed via its public GitHub repository. Clone or download the ZIP — no compiled binary is needed.</p>
+					) : isGitHubRelease ? (
+						<p>This Windows build is distributed through the official VTech App GitHub Release asset, with a SHA-256 checksum published for verification.</p>
 					) : hasDownload && hasSource ? (
 						<p>This app is available from its public source repository and official download link.</p>
 					) : hasDownload ? (
@@ -111,6 +118,25 @@ const structuredData = {
 				}
 			</div>
 		</section>
+
+		{features.length > 0 ? (
+			<section>
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">Capabilities</p>
+						<h2>Built for interrupted real-world file moves</h2>
+						<p>Focused controls make large local and network folder operations easier to restart, verify, and finish.</p>
+					</div>
+				</div>
+				<div class="feature-strip app-feature-strip">
+					{features.map((feature) => (
+						<article class="feature-pill">
+							<span>{feature}</span>
+						</article>
+					))}
+				</div>
+			</section>
+		) : null}
 
 		<section>
 			<div class="section-heading">
@@ -159,7 +185,7 @@ const structuredData = {
 				</ul>
 			</div>
 			<div class="card">
-				<h2>{isGitHub ? 'GitHub repository' : 'Source URL'}</h2>
+				<h2>{isGitHub ? 'GitHub repository' : hasDownload ? 'Download details' : 'Source URL'}</h2>
 				{
 					isGitHub ? (
 						<div class="github-section">
@@ -172,6 +198,14 @@ const structuredData = {
 						</div>
 					) : hasSource ? (
 						<a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a>
+					) : hasDownload ? (
+						<div class="github-section">
+							<p>Official release file:</p>
+							<div class="github-actions">
+								<a class="button primary" href={app.downloadUrl}>Download</a>
+								{hasChecksum ? <a class="button" href={app.checksumUrl}>View checksum</a> : null}
+							</div>
+						</div>
 					) : (
 						<p class="meta">No public source URL is available yet.</p>
 					)

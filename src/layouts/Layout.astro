@@ -590,6 +590,10 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 		font-size: 0.9rem;
 	}
 
+	.app-feature-strip {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
 	.app-card {
 		display: grid;
 		align-content: start;
