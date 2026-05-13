@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import apps from '../data/apps.json';
+
+const olderReleases = apps.flatMap((app) => (
+	(app.olderVersions ?? []).map((version) => ({
+		app,
+		version,
+	}))
+));
+---
+
+<Layout
+	title="Older Versions | VTech App"
+	description="Download archived older versions of VTech App utilities."
+>
+	<header class="page-heading">
+		<p class="eyebrow">Release archive</p>
+		<h1>Older versions.</h1>
+		<p>
+			Archived downloads are kept here for users who need a previous release. For most users,
+			the latest version on the downloads page is recommended.
+		</p>
+		<div class="hero-actions">
+			<a class="button primary" href="/downloads/">Current downloads</a>
+			<a class="button" href="/apps/">Browse apps</a>
+		</div>
+	</header>
+
+	<section>
+		<div class="section-heading">
+			<div>
+				<h2>Archived downloads</h2>
+				<p>Older Windows and Linux releases retained for compatibility or rollback needs.</p>
+			</div>
+		</div>
+		{
+			olderReleases.length > 0 ? (
+				<div class="release-table" aria-label="Older version downloads">
+					<div class="release-table-head">
+						<span>App</span>
+						<span>Version</span>
+						<span>Release</span>
+						<span>Notes</span>
+						<span>Action</span>
+					</div>
+					{olderReleases.map(({ app, version }) => (
+						<article class="release-row">
+							<div>
+								<h3>{app.name}</h3>
+								<p>{app.platform}</p>
+							</div>
+							<span>{version.version}</span>
+							<span>{version.releaseDate}</span>
+							<p>{version.notes}</p>
+							<div class="actions">
+								<a class="button primary" href={version.downloadUrl}>Download</a>
+								{version.releaseUrl ? (
+									<a class="button" href={version.releaseUrl} rel="noopener noreferrer" target="_blank">Release</a>
+								) : null}
+							</div>
+						</article>
+					))}
+				</div>
+			) : (
+				<article class="notice">
+					<h2>No archived versions yet</h2>
+					<p>Older downloads will appear here after an app receives a newer public release.</p>
+				</article>
+			)
+		}
+	</section>
+</Layout>

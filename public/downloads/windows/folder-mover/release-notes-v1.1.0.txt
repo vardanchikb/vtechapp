@@ -1,0 +1,20 @@
+Folder Mover 1.1.0
+
+Folder Mover 1.1.0 adds a new NTFS permission copy mode named Preserve Inheritance.
+This mode is built for server, domain, and file-share migrations where the destination
+must keep the same permission inheritance structure as the source tree.
+
+What's new
+
+- Added Preserve Inheritance permission mode.
+- Preserves source ACL inheritance structure across all folder levels, not only the root.
+- Copies explicit permissions at each file and folder level, then lets child items inherit
+  from their matching copied destination parent.
+- Seeds the copied root folder with the source root's effective permissions so the copied
+  tree has the correct inheritance starting point.
+- Works for both Copy and Move operations.
+- Clarifies that Merge with Inherited remains an additive mode: it keeps destination
+  inheritance enabled, but source effective permissions are added explicitly.
+
+SHA-256:
+7229be4f98cae7704ecdde7a8a2cd29366724b3c682b020e4d8c88ec806c9e3e  FolderMover.exe

@@ -22,12 +22,17 @@
     "slug": "folder-mover",
     "platform": "Windows",
     "status": "Available",
-    "shortDescription": "A fast Windows copy and move utility for large folder jobs, network shares, and NTFS permission-aware migrations.",
-    "longDescription": "Folder Mover helps Windows users, technicians, and domain administrators move or copy large folder trees with resumable sessions, detailed logging, and NTFS permission handling. It is designed for practical file server and workstation migration work where Windows Explorer can be slow, fragile, or unclear about what failed.",
-    "currentVersion": "v1.0.0",
-    "releaseDate": "May 9, 2026",
+    "shortDescription": "A fast Windows copy and move utility for large folder jobs, network shares, and NTFS permission-aware migrations with inheritance-preserving ACL support.",
+    "longDescription": "Folder Mover helps Windows users, technicians, and domain administrators move or copy large folder trees with resumable sessions, detailed logging, and NTFS permission handling. Version 1.1.0 adds Preserve Inheritance mode for server and domain migrations where the destination folder tree must keep the source permission model instead of flattening inherited source permissions into explicit entries on every destination item.",
+    "currentVersion": "v1.1.0",
+    "releaseDate": "May 13, 2026",
     "icon": "",
     "screenshots": [
+      {
+        "src": "/screenshots/folder-mover-preserve-inheritance.png",
+        "alt": "Folder Mover showing the Preserve Inheritance NTFS permission mode selected during a completed copy operation.",
+        "caption": "Preserve Inheritance mode keeps the source ACL inheritance structure across folder levels during copy and move jobs."
+      },
       {
         "src": "/screenshots/folder-mover-success.png",
         "alt": "Folder Mover showing a completed move operation with 52,008 files moved and 8.88 GB processed.",
@@ -39,25 +44,36 @@
         "caption": "Fault-tolerant network handling saves the session so the job can resume after reconnecting."
       }
     ],
-    "downloadUrl": "https://github.com/vardanchikb/vtechapp/releases/download/folder-mover-v1.0.0/FolderMover.exe",
+    "downloadUrl": "https://github.com/vardanchikb/vtechapp/releases/download/folder-mover-v1.1.0/FolderMover.exe",
     "checksumUrl": "/downloads/windows/folder-mover/checksums.txt",
     "donationUrl": "https://ko-fi.com/vtechapp",
     "sourceUrl": "",
     "featureHeading": "Built for interrupted real-world file moves",
-    "featureIntro": "Focused controls make large local and network folder operations easier to restart, verify, and finish.",
+    "featureIntro": "Focused controls make large local and network folder operations easier to restart, preserve, verify, and finish.",
     "features": [
       "Copy or move folders while keeping source data intact until operations finish safely.",
       "Resume interrupted sessions after network share failures or disconnected destinations.",
-      "Preserve NTFS permissions with options for none, protected source-only permissions, or inherited merges.",
+      "Preserve NTFS permissions with options for none, protected source-only permissions, Preserve Inheritance, or inherited merges.",
+      "Preserve ACL inheritance structure by copying explicit permissions at each file and folder level and letting child items inherit from their copied destination parent.",
       "Use multithreaded file operations for large folder trees and network migrations.",
       "Record detailed progress, error logs, file counts, moved data size, and operation duration.",
       "Choose practical overwrite behavior for existing files during repeat or recovery runs."
     ],
     "changelog": [
-      "Initial public Windows release is available as a GitHub Release download.",
-      "Includes copy and move modes, NTFS permission options, resumable sessions, multithreaded operation, and detailed error logs."
+      "Version 1.1.0 adds Preserve Inheritance, a new NTFS permission mode for reliable server and domain folder migrations.",
+      "Preserve Inheritance copies explicit permissions at each file and folder level, then allows child items to inherit from their copied destination parent.",
+      "Merge with Inherited remains available when you want to keep the destination parent's permissions and add source effective permissions explicitly on top."
     ],
     "supportEmail": "vtechinf1@gmail.com",
+    "olderVersions": [
+      {
+        "version": "v1.0.0",
+        "releaseDate": "May 9, 2026",
+        "downloadUrl": "https://github.com/vardanchikb/vtechapp/releases/download/folder-mover-v1.0.0/FolderMover.exe",
+        "releaseUrl": "https://github.com/vardanchikb/vtechapp/releases/tag/folder-mover-v1.0.0",
+        "notes": "Initial public Windows release with copy and move modes, NTFS permission options, resumable sessions, multithreaded operation, and detailed error logs."
+      }
+    ],
     "tags": ["Windows", "folder move", "file copy", "NTFS permissions", "network shares", "migration", "sysadmin"]
   },
   {

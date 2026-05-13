@@ -10,8 +10,8 @@ Contact: https://vtech-app.com/contact/
 ## Current apps
 
 - Folder Size Explorer: Windows storage analysis tool for finding what consumes space across folders, drives, and file trees.
-- Permission Preserving File Copier: planned Windows file and folder copy tool designed to preserve NTFS permissions.
-- Windows File Server Permission Auditor: planned Windows file server auditing tool for reviewing folder permissions and risky access patterns.
+- Folder Mover: Windows copy and move utility for large folder jobs, network shares, resumable sessions, and NTFS permission-aware migrations.
+- Shared Folder Permission Viewer: Windows NTFS permission auditing utility for scanning shared folders and reviewing explicit, inherited, orphaned, and risky access entries.
 
 ## Publisher
 

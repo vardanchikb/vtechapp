@@ -18,6 +18,8 @@ const isGitHubRelease = hasDownload && app.downloadUrl.includes('github.com') &&
 const cloneUrl = isGitHub ? app.sourceUrl + '.git' : null;
 const features = app.features ?? [];
 const hasChecksum = Boolean(app.checksumUrl);
+const olderVersions = app.olderVersions ?? [];
+const hasOlderVersions = olderVersions.length > 0;
 const featureHeading = app.featureHeading ?? 'Built for practical administration work';
 const featureIntro = app.featureIntro ?? 'Focused controls make practical administration workflows easier to review, verify, and finish.';
 const screenshots = (app.screenshots ?? []).map((screenshot) => (
@@ -67,6 +69,7 @@ const structuredData = {
 					<span class="status">{app.status}</span>
 					{hasDownload ? <a class="button primary" href={app.downloadUrl}>{isGitHub ? 'Download ZIP' : 'Download'}</a> : null}
 					{hasChecksum ? <a class="button" href={app.checksumUrl}>Checksum</a> : null}
+					{hasOlderVersions ? <a class="button" href="/olderversions/">Older versions</a> : null}
 					{isGitHub ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a> : hasSource ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer">View source</a> : null}
 					<a class="button primary" href={app.donationUrl} rel="noopener noreferrer">Donate</a>
 					<a class="button" href={`mailto:${app.supportEmail}`}>Contact support</a>
@@ -89,6 +92,7 @@ const structuredData = {
 				}
 				{isGitHub ? <a class="button" href={app.sourceUrl} rel="noopener noreferrer" target="_blank">View on GitHub</a> : null}
 				{hasChecksum ? <a class="button" href={app.checksumUrl}>View checksum</a> : null}
+				{hasOlderVersions ? <a class="button" href="/olderversions/">Older versions</a> : null}
 			</aside>
 		</header>
 
@@ -186,6 +190,20 @@ const structuredData = {
 					{app.changelog.map((entry) => <li>{entry}</li>)}
 				</ul>
 			</div>
+			{hasOlderVersions ? (
+				<div class="card">
+					<h2>Older versions</h2>
+					<ul>
+						{olderVersions.map((version) => (
+							<li>
+								<a href={version.downloadUrl}>{version.version}</a>
+								{version.releaseDate ? ` - ${version.releaseDate}` : ''}
+							</li>
+						))}
+					</ul>
+					<a class="button" href="/olderversions/">View all older versions</a>
+				</div>
+			) : null}
 			<div class="card">
 				<h2>{isGitHub ? 'GitHub repository' : hasDownload ? 'Download details' : 'Source URL'}</h2>
 				{

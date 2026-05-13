@@ -8,6 +8,7 @@ const staticPaths = [
 	'/',
 	'/apps/',
 	'/downloads/',
+	'/olderversions/',
 	'/about/',
 	'/contact/',
 	'/donate/',
