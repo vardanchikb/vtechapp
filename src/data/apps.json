@@ -43,6 +43,8 @@
     "checksumUrl": "/downloads/windows/folder-mover/checksums.txt",
     "donationUrl": "https://ko-fi.com/vtechapp",
     "sourceUrl": "",
+    "featureHeading": "Built for interrupted real-world file moves",
+    "featureIntro": "Focused controls make large local and network folder operations easier to restart, verify, and finish.",
     "features": [
       "Copy or move folders while keeping source data intact until operations finish safely.",
       "Resume interrupted sessions after network share failures or disconnected destinations.",
@@ -91,21 +93,67 @@
     "tags": ["Linux", "Jackery", "battery monitor", "solar generator", "Kasa", "systemd", "home automation"]
   },
   {
-    "name": "Windows File Server Permission Auditor",
-    "slug": "windows-file-server-permission-auditor",
+    "name": "Shared Folder Permission Viewer",
+    "slug": "shared-folder-permission-viewer",
     "platform": "Windows",
-    "status": "Coming Soon",
-    "shortDescription": "A Windows file server auditing tool for reviewing folder permissions and identifying risky access patterns.",
-    "longDescription": "Windows File Server Permission Auditor is planned as a tool for administrators who need visibility into NTFS and file share permissions. It will help review access, detect overly broad permissions, and support safer file server management.",
-    "currentVersion": "Coming Soon",
-    "releaseDate": "Coming Soon",
+    "status": "Available",
+    "shortDescription": "A Windows NTFS permission auditing utility for scanning shared folders and reviewing explicit, inherited, orphaned, and risky access entries.",
+    "longDescription": "Shared Folder Permission Viewer helps Windows administrators inspect NTFS permissions across shared folders, nested directory trees, local accounts, Active Directory users and groups, and orphaned SIDs. It combines a searchable permission explorer with focused security analysis views for inheritance overrides, deny rules, elevated privileges, unauthorized entries, and account lookups.",
+    "currentVersion": "v1.0.0",
+    "releaseDate": "May 13, 2026",
     "icon": "",
-    "screenshots": [],
-    "downloadUrl": "",
+    "screenshots": [
+      {
+        "src": "/screenshots/shared-folder-permission-viewer/permission-explorer-scan-complete.png",
+        "alt": "Shared Folder Permission Viewer showing a completed recursive scan with folders, ACE counts, account classification, and the permission explorer tree.",
+        "caption": "Recursive scan results show folder counts, ACE totals, AD identities, local and builtin accounts, and orphaned SID coverage."
+      },
+      {
+        "src": "/screenshots/shared-folder-permission-viewer/security-analysis-inheritance.png",
+        "alt": "Shared Folder Permission Viewer showing the Security Analysis tab with inheritance override findings.",
+        "caption": "Security analysis views highlight inheritance overrides, privilege findings, deny rules, unauthorized entries, orphaned SIDs, and user search results."
+      },
+      {
+        "src": "/screenshots/shared-folder-permission-viewer/html-report-risk-overview.png",
+        "alt": "HTML Folder Permission Report showing audit context, filter controls, summary tiles, and a risk overview.",
+        "caption": "HTML reports include audit context, searchable filters, summary tiles, and prioritized risk overview sections."
+      },
+      {
+        "src": "/screenshots/shared-folder-permission-viewer/html-report-folder-tree.png",
+        "alt": "HTML Folder Permission Report showing an expandable folder tree with explicit and inherited ACEs.",
+        "caption": "Expandable folder-tree reporting keeps large scans browsable while preserving explicit and inherited ACE detail."
+      },
+      {
+        "src": "/screenshots/shared-folder-permission-viewer/html-report-identity-reference.png",
+        "alt": "HTML Folder Permission Report showing identity reference cards with group membership and folder access details.",
+        "caption": "Identity reference cards connect groups, nested members, and folder access into a reviewable report."
+      },
+      {
+        "src": "/screenshots/shared-folder-permission-viewer/excel-export-identity-inventory.png",
+        "alt": "Microsoft Excel showing a Shared Folder Permission Viewer export with identity inventory and group member rows.",
+        "caption": "Excel exports provide tabular identity inventory, group membership, raw ACEs, findings, and scan error worksheets."
+      }
+    ],
+    "downloadUrl": "https://github.com/vardanchikb/vtechapp/releases/download/shared-folder-permission-viewer-v1.0.0/FolderPermissionViewer.exe",
+    "checksumUrl": "/downloads/windows/shared-folder-permission-viewer/checksums.txt",
     "donationUrl": "https://ko-fi.com/vtechapp",
     "sourceUrl": "",
-    "changelog": ["Initial public release is in development."],
+    "featureHeading": "Built for NTFS permission visibility",
+    "featureIntro": "Focused views make permission scans easier to search, analyze, export, and revisit.",
+    "features": [
+      "Scan shared folders recursively and collect NTFS access control entries into a searchable permission tree.",
+      "Separate Active Directory users and groups from local and builtin accounts during scans.",
+      "Highlight inherited permissions, explicit overrides, deny rules, elevated privileges, unauthorized entries, and orphaned SIDs.",
+      "Search by folder path or identity to trace where a user or group has access.",
+      "Export audit results to HTML and Excel for review, filtering, sharing, and offline evidence.",
+      "Use multithreaded scans for larger folder trees and file server shares.",
+      "Store scan sessions locally so previous audit results can be reopened for review."
+    ],
+    "changelog": [
+      "Initial public Windows release is available as a GitHub Release download.",
+      "Includes recursive NTFS permission scanning, local and Active Directory account classification, searchable permission exploration, security analysis reports, and HTML/Excel export screenshots."
+    ],
     "supportEmail": "vtechinf1@gmail.com",
-    "tags": ["Windows", "file server", "NTFS", "permissions", "audit", "security", "sysadmin"]
+    "tags": ["Windows", "file server", "NTFS", "permissions", "ACL", "security audit", "sysadmin"]
   }
 ]

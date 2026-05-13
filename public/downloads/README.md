@@ -10,8 +10,8 @@ Releases or Cloudflare R2 instead.
 
 - `windows/folder-size-explorer/`
 - `windows/folder-mover/`
+- `windows/shared-folder-permission-viewer/`
 - `windows/permission-preserving-file-copier/`
-- `windows/windows-file-server-permission-auditor/`
 
 ## Suggested Files Per Release
 

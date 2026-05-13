@@ -18,6 +18,8 @@ const isGitHubRelease = hasDownload && app.downloadUrl.includes('github.com') &&
 const cloneUrl = isGitHub ? app.sourceUrl + '.git' : null;
 const features = app.features ?? [];
 const hasChecksum = Boolean(app.checksumUrl);
+const featureHeading = app.featureHeading ?? 'Built for practical administration work';
+const featureIntro = app.featureIntro ?? 'Focused controls make practical administration workflows easier to review, verify, and finish.';
 const screenshots = (app.screenshots ?? []).map((screenshot) => (
 	typeof screenshot === 'string'
 		? { src: screenshot, alt: `${app.name} screenshot`, caption: '' }
@@ -124,8 +126,8 @@ const structuredData = {
 				<div class="section-heading">
 					<div>
 						<p class="eyebrow">Capabilities</p>
-						<h2>Built for interrupted real-world file moves</h2>
-						<p>Focused controls make large local and network folder operations easier to restart, verify, and finish.</p>
+						<h2>{featureHeading}</h2>
+						<p>{featureIntro}</p>
 					</div>
 				</div>
 				<div class="feature-strip app-feature-strip">
